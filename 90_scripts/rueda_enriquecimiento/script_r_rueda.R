@@ -1,7 +1,7 @@
 # Primero, leemos los datos (cvs/excel) con el siguiente código:
 # Nota, aquí los datos se encuentran en el mismo directorio del scrip, si no es así, hay que especificar el directorio
 
-datos <- read.csv(file = 'registro_por_hora.csv', header = FALSE)
+datos <- read.csv(file = 'registro_por_hora.csv', header = TRUE)
 # RESULTADO: datos <- read.csv(file = 'registro_por_hora.csv')
 
 # Para corroborar que los datos están en orden, usar el siguiente comando para ver los datos importados
@@ -16,86 +16,174 @@ colnames(datos)[1] <- "hora"
 # Revisar
 head(datos)
 
-# Como vemos, solo tenemos 2 columnas con todos los datos de todos los días
-# Primero, queremos separar en una columna cada día nuevo
-
-# para esto, lo primero que tenemos que hacer es crear una nueva columna
-# esta nueva columna la populamos con la leyenda NA
-datos$nuevo_dia <- NA
-head(datos)
------------
 # PENDIENTE: Crear función que cambie el formato de los horarios
   # por lo mientras, se va a hacer con VSCode
   
---------  
-  
-# Ahora, creamos una variable que revise si los valores (tiempo) decrecen
+library(dplyr)
 
-decrece <- FALSE
+df <- read.csv(file = 'registro_por_hora.csv', header = TRUE)
 
-# Loop por las filas de nuestros datos
+  
+df <- df %>% 
+  group_by(day = as.Date(time, format = "%Y-%m-%d")) %>% 
+  mutate(day_one = ifelse(time == "00:00", NA, day_one)) %>%
+  tidyr::pivot_wider(names_from = day, values_from = day_one)
 
-for (i in 1:nrow(datos)) {
-  # Probar si el valor actual decrece
-  if (i > 1 && datos$hora[i] < datos$hora[i-1]) {
-    decrece <- TRUE
-  }
+head(df)
+
+
+
+# You can use the dplyr library in R to group the data by the values in column X
+# then use the mutate function to create new columns for each group of values and fill them with the corresponding values from the "Y" column
+
+
+
+library(dplyr)
+df <- read.csv(file = 'registro_por_hora.csv', header = TRUE)
+
+# Revisar que los datos sean int
+str(df)
+# como la primera columna es num "df[1], se va a convertir a int
+df$hora = as.integer(as.numeric(df$hora))
+# Comprobar que sea int
+str(df)
+##NOTA, creo que funciónó mejor con i
+
+
+df <- df %>% 
+  group_by(x = cumsum(hora == 0)) %>% 
+  mutate(y_group = dia1) %>%
+  tidyr::pivot_wider(names_from = x, values_from = y_group)
+
+head(df)
+
+
+write.csv(df, "exortado_prueba.csv", row.names=TRUE)
+
+
+# This code will first group the data by the values in column X using cumsum(X==0).
+# This will create a new column with a group number that will increase each time a 0 is found in the X column.
+# Then, it will use the mutate function to create a new column named "y_group" and fill it with the values from Y
+# Finally, it will use the pivot_wider function from the tidyr library to create new columns for each group and fill them with the corresponding values from the "y_group" column.
+# The new columns will be named based on the group number.
+# You can also rename the new columns using rename_at function from dplyr to something meaningful
+# such as rename_at(vars(matches("x_")), funs(paste0("group_", .)))
+
+# Please note that this code assumes that the values in column X are integers
+# and that the column name is X and Y, you should change that accordingly if your column names are different.
+
+
+# CORRER CON NUMERIC en lugar de INTEGERS
+
+
+# the previous code can be modified to work with numeric values in column X
+# One way to group the data by a range of values in column X is to use the cut function
+
+library(dplyr)
+
+df <- df %>% 
+  mutate(x_group = cut(hora,breaks = c(-Inf,0,Inf))) %>% 
+  mutate(y_group = dia1) %>%
+  tidyr::pivot_wider(names_from = x_group, values_from = y_group)
+
+head(df)
+
+
+
+# This code will first use the cut function to create a new column called "x_group" that will group the values in column X into two groups: one group for values less than 0 and one group for values greater or equal than 0. Then, it will use the mutate function to create a new column named "y_group" and fill it with the values from Y. Finally, it will use the pivot_wider function from the tidyr library to create new columns for each group and fill them with the corresponding values from the "y_group" column. The new columns will be named based on the group "x_group".
+# You can also rename the new columns using rename_at function from dplyr to something meaningful such as rename_at(vars(matches("x_group_")), funs(paste0("group_", .)))
+# Please note that this code assumes that the values in column X are numeric and that the column name is X and Y, you should change that accordingly if your column names are different.
+
+
+######### Tercera prueba
+datos <- read.csv(file = 'registro_por_hora.csv', header = TRUE)
+head(datos)
+tail(datos)
+str(datos)
+
+#cambiar nombre de columnas a mejor formato
+
+# revisar columna a cambiar
+colnames(datos)[1]
+# cambiar nombre
+colnames(datos)[1] <- "hora"
+# Revisar
+head(datos)
+
+# eliminar primera fila
+datos %>%  filter(!row_number() %in% c(1)) -> datos2
+head(datos2)
+
+library(tidyr)
+library(tidyverse)
+
+datos3 <- pivot_longer(
+  data=datos2,
+  cols = c("hora"),
+  names_to = ""
   
-  # Revisar si el valor actual decrece y si el previo no es NA
-  if(decrece && !is.na(datos$hora[i-1])) {
-    # movel el valor previo a una nueva columna
-    datos$hora[i-1] <- datos$hora[i-1]
-    # remover el valor previo de la columna original
-    datos$hora[i-1] <- NA
-  }
-  
-  # revisar si valor actual no decrece
-  if (!decrece) {
-    # mover valor actual a nueva columna
-    datos$nuevo_dia[i] <- datos$hora[i]
-    # remover valor actual de columna original
-    datos$hora[i] <- NA
-  }
-  
-  # revisar si valor actual no decrece
-  if (datos$hora[i] >= datos$hora[i-1]) {
-    decrece <- FALSE
-  }
+)
+
+
+head(datos3)
+
+## prueba con codigo de 
+df <- datos2
+head(df)
+## cambiar : por . en código
+convertir <- function(x){
+  x <- as.character(x)
+  x <-gsub(pattern = ":", replacement = ".",x = x, fixed = TRUE)
+  x <- as.numeric(x)
+  return(x)
 }
 
+df$hora <-convertir(df$hora)
+head(df)
 
------------
-#In this example code, the sample data frame df has a single column named x containing the values 5, 6, 7, 2, 8, 9, 4, 5, 6, 7, 3, 8, 9. The code first initializes a new column named y and sets all of its values to NA. Then, it iterates through each row of the data frame and checks if the current value in x is smaller than the previous value. If it is, it sets the variable decreasing to true. If the value is not decreasing, it moves the current value to the new column y and sets the value in the original column x to NA. When the value starts increasing again, it sets the variable decreasing to false.
+str(df)
 
-# This code will move all the values in x until it decreases to the new column y, and it will also remove the values that were moved to the new column from the original column x.  
-------------
-if(!exists("datos$hora")){
-    stop("the column hora does not exist in the dataframe")
-  }
-for (i in 2:nrow(datos)) {
-  # Probar si el valor actual decrece
-  if (datos$hora[i] < datos$hora[i-1]) {
-    decrece <- TRUE
-  }
-  # Revisar si el valor actual decrece y si el previo no es NA
-  if(decrece && !is.na(datos$hora[i-1])) {
-    # movel el valor previo a una nueva columna
-    datos$hora[i-1] <- datos$hora[i-1]
-    # remover el valor previo de la columna original
-    datos$hora[i-1] <- NA
-  }
-  # revisar si valor actual no decrece
-  if (!decrece) {
-    # mover valor actual a nueva columna
-    datos$nuevo_dia[i] <- datos$hora[i]
-    # remover valor actual de columna original
-    datos$hora[i] <- NA
-  }
-  # revisar si valor actual no decrece
-  if (datos$hora[i] >= datos$hora[i-1]) {
-    decrece <- FALSE
-  }
-}
+#convertir a numerico
+df_num <- as.data.frame(apply(df, 2, as.numeric))
+sapply(df_num, class)                                # Print classes of all colums
+head(df_num)
 
+df_sort <- df_num %>% 
+  group_by(x = cumsum(hora == 0)) %>% 
+  mutate(y_group = X) %>%
+  tidyr::pivot_wider(names_from = x, values_from = y_group)
+
+head(df_sort)
+str(df_sort)
+
+write.csv(df_sort, "exortado_prueba_2.csv", row.names=TRUE)         
+
+### ya está separado por días, ahora vamos a hacer la suma 
+
+df_suma <- colSums(df_sort, na.rm = TRUE)
+head(df_suma)
+
+## nos convirtió a valor numérico, hay que regresarlo a dataframe
+
+print(class(df_suma))
+
+df_grafico <- as.data.frame(df_suma)
+
+print(class(df_grafico))
+df_grafico
+head(df_grafico)
+## ahora vamos a graficar la suma
+library(ggplot2)
+
+ggplot(data = df_grafico, 
+       mapping = aes(x="", y = df_suma)) +
+  geom_col()
+
+
+
+
+
+  
+  
     
   
