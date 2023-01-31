@@ -1,0 +1,1475 @@
+PMID- 30871577
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20190715
+LR  - 20200225
+IS  - 1742-2094 (Electronic)
+IS  - 1742-2094 (Linking)
+VI  - 16
+IP  - 1
+DP  - 2019 Mar 14
+TI  - Urolithin A attenuates memory impairment and neuroinflammation in APP/PS1 mice.
+PG  - 62
+LID - 10.1186/s12974-019-1450-3 [doi]
+LID - 62
+AB  - BACKGROUND: Alzheimer's disease (AD) is a progressive neurodegenerative disorder 
+      characterized by an abnormal accumulation of amyloid-β (Aβ) plaques, 
+      neuroinflammation, and impaired neurogenesis. Urolithin A (UA), a gut-microbial 
+      metabolite of ellagic acid, has been reported to exert anti-inflammatory effects 
+      in the brain. However, it is unknown whether UA exerts its properties of 
+      anti-inflammation and neuronal protection in the APPswe/PS1ΔE9 (APP/PS1) mouse 
+      model of AD. METHODS: Morris water maze was used to detect the cognitive 
+      function. Terminal deoxynucleotidyl transferase-mediated dUTP nick end labeling 
+      (TUNEL) assay was performed to detect neuronal apoptosis. Immunohistochemistry 
+      analyzed the response of glia, Aβ deposition, and neurogenesis. The expression of 
+      inflammatory mediators were measured by enzyme-linked immunosorbent assay (ELISA) 
+      and quantitative real-time polymerase chain reaction (qRT-PCR). The modulating 
+      effects of UA on cell signaling pathways were assayed by Western blotting. 
+      RESULTS: We demonstrated that UA ameliorated cognitive impairment, prevented 
+      neuronal apoptosis, and enhanced neurogenesis in APP/PS1 mice. Furthermore, UA 
+      attenuated Aβ deposition and peri-plaque microgliosis and astrocytosis in the 
+      cortex and hippocampus. We also found that UA affected critical cell signaling 
+      pathways, specifically by enhancing cerebral AMPK activation, decreasing the 
+      activation of P65NF-κB and P38MAPK, and suppressing Bace1 and APP degradation. 
+      CONCLUSIONS: Our results indicated that UA imparted cognitive protection by 
+      protecting neurons from death and triggering neurogenesis via anti-inflammatory 
+      signaling in APP/PS1 mice, suggesting that UA might be a promising therapeutic 
+      drug to treat AD.
+FAU - Gong, Zhuo
+AU  - Gong Z
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Huang, Jingyi
+AU  - Huang J
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Xu, Biao
+AU  - Xu B
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Ou, Zhenri
+AU  - Ou Z
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Zhang, Le
+AU  - Zhang L
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Lin, Xiaohong
+AU  - Lin X
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Ye, Xiujuan
+AU  - Ye X
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Kong, Xuejian
+AU  - Kong X
+AD  - Department of Neurology of the Sixth Affiliated Hospital, Guangzhou Medical 
+      University, Guangzhou, 511518, China.
+FAU - Long, Dahong
+AU  - Long D
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Sun, Xiangdong
+AU  - Sun X
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - He, Xiaosong
+AU  - He X
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Xu, Liping
+AU  - Xu L
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Li, Qingqing
+AU  - Li Q
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China.
+FAU - Xuan, Aiguo
+AU  - Xuan A
+AD  - Institute of Neuroscience and Department of Neurology of the Second Affiliated 
+      Hospital of Guangzhou Medical University, Key Laboratory of Neurogenetics and 
+      Channelopathies of Guangdong Province and the Ministry of Education of China, 
+      Guangzhou, 510260, China. xag2005@163.com.
+LA  - eng
+PT  - Journal Article
+DEP - 20190314
+PL  - England
+TA  - J Neuroinflammation
+JT  - Journal of neuroinflammation
+JID - 101222974
+RN  - 0 (Amyloid beta-Peptides)
+RN  - 0 (Amyloid beta-Protein Precursor)
+RN  - 0 (Anti-Inflammatory Agents)
+RN  - 0 (Coumarins)
+RN  - 0 (Cytokines)
+RN  - 0 (Nerve Tissue Proteins)
+RN  - 0 (PSEN1 protein, human)
+RN  - 0 (Presenilin-1)
+RN  - 1143-70-0 (3,8-dihydroxy-6H-dibenzo(b,d)pyran-6-one)
+SB  - IM
+MH  - Alzheimer Disease/complications/genetics
+MH  - Amyloid beta-Peptides/metabolism
+MH  - Amyloid beta-Protein Precursor/genetics/metabolism
+MH  - Animals
+MH  - Anti-Inflammatory Agents/*therapeutic use
+MH  - Brain/drug effects/metabolism/pathology
+MH  - Coumarins/*therapeutic use
+MH  - Cytokines/genetics/*metabolism
+MH  - Disease Models, Animal
+MH  - Encephalitis/*drug therapy/etiology
+MH  - Female
+MH  - Gene Expression Regulation/*drug effects/genetics
+MH  - Gliosis/drug therapy/genetics
+MH  - Maze Learning/drug effects
+MH  - Memory Disorders/*drug therapy/etiology
+MH  - Mice
+MH  - Mice, Inbred C57BL
+MH  - Mice, Transgenic
+MH  - Nerve Tissue Proteins/metabolism
+MH  - Neurogenesis/drug effects/genetics
+MH  - Plaque, Amyloid/drug therapy/etiology
+MH  - Presenilin-1/genetics/metabolism
+MH  - Signal Transduction/drug effects/genetics
+PMC - PMC6417212
+OTO - NOTNLM
+OT  - Alzheimer’s disease
+OT  - Memory impairment
+OT  - Neurogenesis
+OT  - Neuroinflammation
+OT  - Urolithin A
+COIS- ETHICS APPROVAL AND CONSENT TO PARTICIPATE: All animal studies were performed 
+      with the approval by the Ethics Committee of Guangzhou Medical University, 
+      Guangdong, China. CONSENT FOR PUBLICATION: Not applicable. COMPETING INTERESTS: 
+      The authors declare that they have no competing interests. PUBLISHER’S NOTE: 
+      Springer Nature remains neutral with regard to jurisdictional claims in published 
+      maps and institutional affiliations.
+EDAT- 2019/03/16 06:00
+MHDA- 2019/07/16 06:00
+CRDT- 2019/03/16 06:00
+PHST- 2018/11/26 00:00 [received]
+PHST- 2019/03/05 00:00 [accepted]
+PHST- 2019/03/16 06:00 [entrez]
+PHST- 2019/03/16 06:00 [pubmed]
+PHST- 2019/07/16 06:00 [medline]
+AID - 10.1186/s12974-019-1450-3 [pii]
+AID - 1450 [pii]
+AID - 10.1186/s12974-019-1450-3 [doi]
+PST - epublish
+SO  - J Neuroinflammation. 2019 Mar 14;16(1):62. doi: 10.1186/s12974-019-1450-3.
+
+PMID- 31234698
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20201123
+LR  - 20211204
+IS  - 1554-8635 (Electronic)
+IS  - 1554-8627 (Print)
+IS  - 1554-8627 (Linking)
+VI  - 16
+IP  - 3
+DP  - 2020 Mar
+TI  - Autophagic death of neural stem cells mediates chronic stress-induced decline of 
+      adult hippocampal neurogenesis and cognitive deficits.
+PG  - 512-530
+LID - 10.1080/15548627.2019.1630222 [doi]
+AB  - Macroautophagy/autophagy is generally regarded as a cytoprotective mechanism, and 
+      it remains a matter of controversy whether autophagy can cause cell death in 
+      mammals. Here, we show that chronic restraint stress suppresses adult hippocampal 
+      neurogenesis in mice by inducing autophagic cell death (ACD) of hippocampal 
+      neural stem cells (NSCs). We generated NSC-specific, inducible Atg7 conditional 
+      knockout mice and found that they had an intact number of NSCs and neurogenesis 
+      level under chronic restraint stress and were resilient to stress- or 
+      corticosterone-induced cognitive and mood deficits. Corticosterone treatment of 
+      adult hippocampal NSC cultures induced ACD via SGK3 (serum/glucocorticoid 
+      regulated kinase 3) without signs of apoptosis. Our results demonstrate that ACD 
+      is biologically important in a mammalian system in vivo and would be an 
+      attractive target for therapeutic intervention for psychological stress-induced 
+      disorders.Abbreviations: AAV: adeno-associated virus; ACD: autophagic cell death; 
+      ACTB: actin, beta; Atg: autophagy-related; ASCL1/MASH1: achaete-scute family bHLH 
+      transcription factor 1; BafA(1): bafilomycin A(1); BrdU: 
+      Bromodeoxyuridine/5-bromo-2'-deoxyuridine; CASP3: caspase 3; cKO: conditional 
+      knockout; CLEM: correlative light and electron microscopy; CORT: corticosterone; 
+      CRS: chronic restraint stress; DAB: 3,3'-diaminobenzidine; DCX: doublecortin; DG: 
+      dentate gyrus; GC: glucocorticoid; GFAP: glial fibrillary acidic protein; HCN: 
+      hippocampal neural stem; i.p.: intraperitoneal; MAP1LC3B: microtubule-associated 
+      protein 1 light chain 3 beta; MKI67/Ki67: antigen identified by monoclonal 
+      antibody Ki 67; MWM: Morris water maze; Nec-1: necrostatin-1; NES: nestin; 
+      NR3C1/GR: nuclear receptor subfamily 3, group C, member 1; NSC: neural stem cell; 
+      PCD: programmed cell death; PFA: paraformaldehyde; PX: Phox homology; PtdIns3P: 
+      phosphatidylinositol-3-phosphate; RBFOX3/NeuN: RNA binding protein, fox-1 homolog 
+      (C. elegans) 3; SGK: serum/glucocorticoid-regulated kinases; SGZ: subgranular 
+      zone; SOX2: SRY (sex determining region Y)-box 2; SQSTM1: sequestosome 1; STS: 
+      staurosporine; TAM: tamoxifen; Ulk1: unc-51 like kinase 1; TUNEL: terminal 
+      deoxynucleotidyl transferase dUTP nick end labeling; VIM: vimentin; WT: wild 
+      type; ZFYVE1: zinc finger, FYVE domain containing 1; Z-VAD/Z-VAD-FMK: pan-caspase 
+      inhibitor.
+FAU - Jung, Seonghee
+AU  - Jung S
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Choe, Seongwon
+AU  - Choe S
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Woo, Hanwoong
+AU  - Woo H
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Jeong, Hyeonjeong
+AU  - Jeong H
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - An, Hyun-Kyu
+AU  - An HK
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Moon, Hyewon
+AU  - Moon H
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Ryu, Hye Young
+AU  - Ryu HY
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Yeo, Bo Kyoung
+AU  - Yeo BK
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Lee, Ye Won
+AU  - Lee YW
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Choi, Hyosun
+AU  - Choi H
+AD  - BK21 Plus Program, Department of Senior Healthcare, Graduate School, Eulji 
+      University, Daejeon, Republic of Korea.
+FAU - Mun, Ji Young
+AU  - Mun JY
+AUID- ORCID: 0000-0003-0820-6233
+AD  - Department of Structure and Function of Neural Network, Korea Brain Research 
+      Institute, Daegu, Republic of Korea.
+FAU - Sun, Woong
+AU  - Sun W
+AD  - Department of Anatomy, Korea University College of Medicine, Seoul, Republic of 
+      Korea.
+FAU - Choe, Han Kyoung
+AU  - Choe HK
+AUID- ORCID: 0000-0001-7849-7094
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+FAU - Kim, Eun-Kyoung
+AU  - Kim EK
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+AD  - Neurometabolomics Research Center, DGIST, Daegu, Republic of Korea.
+FAU - Yu, Seong-Woon
+AU  - Yu SW
+AD  - Department of Brain and Cognitive Sciences, Daegu Gyeongbuk Institute of Science 
+      and Technology (DGIST), Daegu, Republic of Korea.
+AD  - Neurometabolomics Research Center, DGIST, Daegu, Republic of Korea.
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20190624
+PL  - United States
+TA  - Autophagy
+JT  - Autophagy
+JID - 101265188
+RN  - 0 (Dcx protein, mouse)
+RN  - 0 (Doublecortin Protein)
+RN  - 0 (Immediate-Early Proteins)
+RN  - EC 2.7.11.1 (Protein Serine-Threonine Kinases)
+RN  - EC 2.7.11.1 (Sgk2 protein, mouse)
+RN  - EC 2.7.11.1 (serum-glucocorticoid regulated kinase)
+RN  - EC 6.2.1.45 (Autophagy-Related Protein 7)
+RN  - W980KJ009P (Corticosterone)
+SB  - IM
+MH  - Animals
+MH  - Anxiety/complications
+MH  - Apoptosis
+MH  - *Autophagy
+MH  - Autophagy-Related Protein 7/deficiency/metabolism
+MH  - Cognition Disorders/complications/*pathology
+MH  - Corticosterone/administration & dosage
+MH  - Depression/complications
+MH  - Doublecortin Protein
+MH  - Gene Deletion
+MH  - Gene Silencing
+MH  - Hippocampus/*pathology
+MH  - Immediate-Early Proteins/metabolism
+MH  - Mice, Knockout
+MH  - Necroptosis
+MH  - Neural Stem Cells/metabolism/*pathology
+MH  - *Neurogenesis
+MH  - Protein Serine-Threonine Kinases/metabolism
+MH  - *Stress, Physiological
+PMC - PMC6999625
+OTO - NOTNLM
+OT  - Atg7 knockout
+OT  - autophagic cell death
+OT  - corticosterone
+OT  - hippocampal neurogenesis
+OT  - serum/glucocorticoid regulated kinase 3
+OT  - stress
+EDAT- 2019/06/27 06:00
+MHDA- 2020/11/24 06:00
+CRDT- 2019/06/26 06:00
+PHST- 2019/06/27 06:00 [pubmed]
+PHST- 2020/11/24 06:00 [medline]
+PHST- 2019/06/26 06:00 [entrez]
+AID - 1630222 [pii]
+AID - 10.1080/15548627.2019.1630222 [doi]
+PST - ppublish
+SO  - Autophagy. 2020 Mar;16(3):512-530. doi: 10.1080/15548627.2019.1630222. Epub 2019 
+      Jun 24.
+
+PMID- 32549250
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210211
+LR  - 20210211
+IS  - 2072-6643 (Electronic)
+IS  - 2072-6643 (Linking)
+VI  - 12
+IP  - 6
+DP  - 2020 Jun 15
+TI  - Chronic Supplementation with a Mix of Salvia officinalis and Salvia 
+      lavandulaefolia Improves Morris Water Maze Learning in Normal Adult C57Bl/6J 
+      Mice.
+LID - 10.3390/nu12061777 [doi]
+LID - 1777
+AB  - Background: Two different species of sage, Salvia officinalis and Salvia 
+      lavandulaefolia, have demonstrated activities in cognitive function during 
+      preclinical and clinical studies related to impaired health situations or single 
+      administration. Different memory processes have been described to be 
+      significantly and positively impacted. Objective: Our objective is to explore the 
+      potential of these Salvia, and their additional activities, in healthy 
+      situations, and during prolonged administration, on memory and subsequent 
+      mechanisms of action related to putative effects. Design: This mouse study has 
+      implicated four investigational arms dedicated to control, Salvia officinalis 
+      aqueous extract, Salvia lavandulaefolia-encapsulated essential oil and a mix 
+      thereof (Cognivia™) for 2 weeks of administration. Cognitive functions have been 
+      assessed throughout Y-maze and Morris water maze models. The impact of 
+      supplementation on lipid peroxidation, oxidative stress, neurogenesis, neuronal 
+      activity, neurotrophins, neurotrophin receptors, CaM kinase II and glucocorticoid 
+      receptors has been assessed via post-interventional tissue collection. Results: 
+      All Salvia groups had a significant effect on Y-maze markers on day 1 of 
+      administration. Only the mix of two Salvia species demonstrated significant 
+      improvements in Morris water maze markers at the end of administration. 
+      Considering all biological and histological markers, we did not observe any 
+      significant effect of S. officinalis, S. lavandulaefolia and a mix of Salvia 
+      supplementation on lipid peroxidation, oxidative stress and neuronal plasticity 
+      (neurogenesis, neuronal activity, neurotrophins). Interestingly, CaM kinase II 
+      protein expression is significantly increased in animals supplemented with 
+      Salvia. Conclusion: The activities of Salvia alone after one intake have been 
+      confirmed; however, a particular combination of different types of Salvia have 
+      been shown to improve memory and present specific synergistic effects after 
+      chronic administration in healthy mice.
+FAU - Dinel, Anne-Laure
+AU  - Dinel AL
+AD  - Université de Bordeaux, INRAE, Bordeaux INP, NutriNeuro Laboratory, 146 rue Léo 
+      Saignat, 33076 Bordeaux, France.
+AD  - NutriBrain Research and Technology Transfer, Nutrition et Neurobiologie Intégrée, 
+      UMR 1286, 33076 Bordeaux, France.
+FAU - Lucas, Céline
+AU  - Lucas C
+AD  - NutriBrain Research and Technology Transfer, Nutrition et Neurobiologie Intégrée, 
+      UMR 1286, 33076 Bordeaux, France.
+FAU - Guillemet, Damien
+AU  - Guillemet D
+AD  - Nexira, 129 Chemin de Croisset, 76000 Rouen, France.
+FAU - Layé, Sophie
+AU  - Layé S
+AD  - Université de Bordeaux, INRAE, Bordeaux INP, NutriNeuro Laboratory, 146 rue Léo 
+      Saignat, 33076 Bordeaux, France.
+FAU - Pallet, Véronique
+AU  - Pallet V
+AD  - Université de Bordeaux, INRAE, Bordeaux INP, NutriNeuro Laboratory, 146 rue Léo 
+      Saignat, 33076 Bordeaux, France.
+FAU - Joffre, Corinne
+AU  - Joffre C
+AD  - Université de Bordeaux, INRAE, Bordeaux INP, NutriNeuro Laboratory, 146 rue Léo 
+      Saignat, 33076 Bordeaux, France.
+LA  - eng
+PT  - Journal Article
+DEP - 20200615
+PL  - Switzerland
+TA  - Nutrients
+JT  - Nutrients
+JID - 101521595
+RN  - 0 (Plant Extracts)
+SB  - IM
+MH  - Adult
+MH  - Animals
+MH  - Cognition/*drug effects
+MH  - Dietary Supplements
+MH  - Drug Synergism
+MH  - Humans
+MH  - Male
+MH  - Memory/drug effects
+MH  - Mice
+MH  - Mice, Inbred C57BL
+MH  - *Morris Water Maze Test
+MH  - Plant Extracts/*administration & dosage
+MH  - Salvia/*chemistry
+MH  - Salvia officinalis/*chemistry
+PMC - PMC7353372
+OTO - NOTNLM
+OT  - CaMKII
+OT  - Salvia lavandulaefolia
+OT  - Salvia officinalis
+OT  - cognition
+OT  - navigation strategies
+OT  - short-term memory
+OT  - spatial memory
+COIS- Nexira funded this work. Financial support was provided to INRA/Nutribrain to 
+      conduct the experiments (service provision). ALD, CL, SL, VP and CJ report no 
+      disclosures. Nexira funds DG.
+EDAT- 2020/06/19 06:00
+MHDA- 2021/02/12 06:00
+CRDT- 2020/06/19 06:00
+PHST- 2020/04/20 00:00 [received]
+PHST- 2020/06/09 00:00 [revised]
+PHST- 2020/06/11 00:00 [accepted]
+PHST- 2020/06/19 06:00 [entrez]
+PHST- 2020/06/19 06:00 [pubmed]
+PHST- 2021/02/12 06:00 [medline]
+AID - nu12061777 [pii]
+AID - nutrients-12-01777 [pii]
+AID - 10.3390/nu12061777 [doi]
+PST - epublish
+SO  - Nutrients. 2020 Jun 15;12(6):1777. doi: 10.3390/nu12061777.
+
+PMID- 34106880
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210721
+LR  - 20210721
+IS  - 1945-4589 (Electronic)
+IS  - 1945-4589 (Linking)
+VI  - 13
+IP  - 11
+DP  - 2021 Jun 9
+TI  - Formulated Chinese medicine Shaoyao Gancao Tang reduces NLRP1 and NLRP3 in 
+      Alzheimer's disease cell and mouse models for neuroprotection and cognitive 
+      improvement.
+PG  - 15620-15637
+LID - 10.18632/aging.203125 [doi]
+AB  - Amyloid β (Aβ) plays a major role in the neurodegeneration of Alzheimer's disease 
+      (AD). The accumulation of misfolded Aβ causes oxidative stress and inflammatory 
+      damage leading to apoptotic cell death. Traditional Chinese herbal medicine (CHM) 
+      has been widely used in treating neurodegenerative diseases by reducing oxidative 
+      stress and neuroinflammation. We examined the neuroprotective effect of 
+      formulated CHM Shaoyao Gancao Tang (SG-Tang, made of Paeonia lactiflora and 
+      Glycyrrhiza uralensis at 1:1 ratio) in AD cell and mouse models. In Aβ-GFP 
+      SH-SY5Y cells, SG-Tang reduced Aβ aggregation and reactive oxygen species (ROS) 
+      production, as well as improved neurite outgrowth. When the Aβ-GFP-expressing 
+      cells were stimulated with conditioned medium from interferon (IFN)-γ-activated 
+      HMC3 microglia, SG-Tang suppressed expressions of inducible nitric oxide synthase 
+      (iNOS), NLR family pyrin domain containing 1 (NLRP1) and 3 (NLRP3), tumor 
+      necrosis factor (TNF)-α, interleukin (IL)-1β and IL-6, attenuated caspase-1 
+      activity and ROS production, and promoted neurite outgrowth. In 
+      streptozocin-induced hyperglycemic APP/PS1/Tau triple transgenic (3×Tg-AD) mice, 
+      SG-Tang also reduced expressions of NLRP1, NLRP3, Aβ and Tau in hippocampus and 
+      cortex, as well as improved working and spatial memories in Y maze and Morris 
+      water maze. Collectively, our results demonstrate the potential of SG-Tang in 
+      treating AD by moderating neuroinflammation.
+FAU - Chiu, Ya-Jen
+AU  - Chiu YJ
+AD  - Department of Life Science, National Taiwan Normal University, Taipei 11677, 
+      Taiwan.
+FAU - Lin, Chih-Hsin
+AU  - Lin CH
+AD  - Department of Neurology, Chang Gung Memorial Hospital, Chang Gung University 
+      College of Medicine, Taoyuan 33302, Taiwan.
+FAU - Lee, Ming-Chung
+AU  - Lee MC
+AD  - Sun Ten Pharmaceutical Co. Ltd., New Taipei City 23143, Taiwan.
+FAU - Hsieh-Li, Hsiu Mei
+AU  - Hsieh-Li HM
+AD  - Department of Life Science, National Taiwan Normal University, Taipei 11677, 
+      Taiwan.
+FAU - Chen, Chiung-Mei
+AU  - Chen CM
+AD  - Department of Neurology, Chang Gung Memorial Hospital, Chang Gung University 
+      College of Medicine, Taoyuan 33302, Taiwan.
+FAU - Wu, Yih-Ru
+AU  - Wu YR
+AD  - Department of Neurology, Chang Gung Memorial Hospital, Chang Gung University 
+      College of Medicine, Taoyuan 33302, Taiwan.
+FAU - Chang, Kuo-Hsuan
+AU  - Chang KH
+AD  - Department of Neurology, Chang Gung Memorial Hospital, Chang Gung University 
+      College of Medicine, Taoyuan 33302, Taiwan.
+FAU - Lee-Chen, Guey-Jen
+AU  - Lee-Chen GJ
+AD  - Department of Life Science, National Taiwan Normal University, Taipei 11677, 
+      Taiwan.
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20210609
+PL  - United States
+TA  - Aging (Albany NY)
+JT  - Aging
+JID - 101508617
+RN  - 0 (Adaptor Proteins, Signal Transducing)
+RN  - 0 (Amyloid beta-Peptides)
+RN  - 0 (Apoptosis Regulatory Proteins)
+RN  - 0 (Culture Media, Conditioned)
+RN  - 0 (Drugs, Chinese Herbal)
+RN  - 0 (NALP1 protein, mouse)
+RN  - 0 (NLR Family, Pyrin Domain-Containing 3 Protein)
+RN  - 0 (Neuroprotective Agents)
+RN  - 0 (Protein Aggregates)
+RN  - 0 (Reactive Oxygen Species)
+RN  - 0 (jackyakamcho-tang)
+RN  - 0 (tau Proteins)
+RN  - 147336-22-9 (Green Fluorescent Proteins)
+RN  - 82115-62-6 (Interferon-gamma)
+SB  - IM
+MH  - Adaptor Proteins, Signal Transducing/*metabolism
+MH  - Alzheimer Disease/*drug therapy/*metabolism/physiopathology
+MH  - Amyloid beta-Peptides/metabolism
+MH  - Animals
+MH  - Apoptosis Regulatory Proteins/*metabolism
+MH  - Cell Line
+MH  - *Cognition/drug effects
+MH  - Culture Media, Conditioned/pharmacology
+MH  - Disease Models, Animal
+MH  - Drugs, Chinese Herbal/pharmacology/*therapeutic use
+MH  - Green Fluorescent Proteins/metabolism
+MH  - Humans
+MH  - Interferon-gamma/metabolism
+MH  - Memory/drug effects
+MH  - Memory Disorders/complications/physiopathology
+MH  - Mice, Transgenic
+MH  - Microglia/drug effects/metabolism
+MH  - Models, Biological
+MH  - NLR Family, Pyrin Domain-Containing 3 Protein/*metabolism
+MH  - Neuronal Outgrowth/drug effects
+MH  - *Neuroprotection/drug effects
+MH  - Neuroprotective Agents/pharmacology
+MH  - Protein Aggregates/drug effects
+MH  - Reactive Oxygen Species/metabolism
+MH  - Spatial Learning/drug effects
+MH  - tau Proteins/metabolism
+PMC - PMC8221334
+OTO - NOTNLM
+OT  - Alzheimer's disease
+OT  - Aβ
+OT  - anti-inflammation
+OT  - neuroprotection
+OT  - therapeutics
+COIS- CONFLICTS OF INTEREST: The authors declare that they have no conflicts of 
+      interest.
+EDAT- 2021/06/10 06:00
+MHDA- 2021/07/22 06:00
+CRDT- 2021/06/09 17:22
+PHST- 2020/10/23 00:00 [received]
+PHST- 2021/03/23 00:00 [accepted]
+PHST- 2021/06/10 06:00 [pubmed]
+PHST- 2021/07/22 06:00 [medline]
+PHST- 2021/06/09 17:22 [entrez]
+AID - 203125 [pii]
+AID - 10.18632/aging.203125 [doi]
+PST - ppublish
+SO  - Aging (Albany NY). 2021 Jun 9;13(11):15620-15637. doi: 10.18632/aging.203125. 
+      Epub 2021 Jun 9.
+
+PMID- 34736493
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20220222
+LR  - 20220222
+IS  - 1742-2094 (Electronic)
+IS  - 1742-2094 (Linking)
+VI  - 18
+IP  - 1
+DP  - 2021 Nov 4
+TI  - Rifaximin-mediated gut microbiota regulation modulates the function of microglia 
+      and protects against CUMS-induced depression-like behaviors in adolescent rat.
+PG  - 254
+LID - 10.1186/s12974-021-02303-y [doi]
+LID - 254
+AB  - BACKGROUND: Chronic unpredictable mild stress (CUMS) can not only lead to 
+      depression-like behavior but also change the composition of the gut microbiome. 
+      Regulating the gut microbiome can have an antidepressant effect, but the 
+      mechanism by which it improves depressive symptoms is not clear. Short-chain 
+      fatty acids (SCFAs) are small molecular compounds produced by the fermentation of 
+      non-digestible carbohydrates. SFCAs are ubiquitous in intestinal endocrine and 
+      immune cells, making them important mediators of gut microbiome-regulated body 
+      functions. The balance between the pro- and anti-inflammatory microglia plays an 
+      important role in the occurrence and treatment of depression caused by chronic 
+      stress. Non-absorbable antibiotic rifaximin can regulate the structure of the gut 
+      microbiome. We hypothesized that rifaximin protects against stress-induced 
+      inflammation and depression-like behaviors by regulating the abundance of fecal 
+      microbial metabolites and the microglial functions. METHODS: We administered 
+      150 mg/kg rifaximin intragastrically to rats exposed to CUMS for 4 weeks and 
+      investigated the composition of the fecal microbiome, the content of short-chain 
+      fatty acids in the serum and brain, the functional profiles of microglia and 
+      hippocampal neurogenesis. RESULTS: Our results show that rifaximin ameliorated 
+      depressive-like behavior induced by CUMS, as reflected by sucrose preference, the 
+      open field test and the Morris water maze. Rifaximin increased the relative 
+      abundance of Ruminococcaceae and Lachnospiraceae, which were significantly 
+      positively correlated with the high level of butyrate in the brain. Rifaximin 
+      increased the content of anti-inflammatory factors released by microglia, and 
+      prevented the neurogenic abnormalities caused by CUMS. CONCLUSIONS: These results 
+      suggest that rifaximin can regulate the inflammatory function of microglia and 
+      play a protective role in pubertal neurodevelopment during CUMS by regulating the 
+      gut microbiome and short-chain fatty acids.
+CI  - © 2021. The Author(s).
+FAU - Li, Haonan
+AU  - Li H
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Xiang, Yujiao
+AU  - Xiang Y
+AD  - Cheeloo Hospital, Shandong University, Jinan, People's Republic of China.
+FAU - Zhu, Zemeng
+AU  - Zhu Z
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Wang, Wei
+AU  - Wang W
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Jiang, Zhijun
+AU  - Jiang Z
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Zhao, Mingyue
+AU  - Zhao M
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Cheng, Shuyue
+AU  - Cheng S
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China.
+FAU - Pan, Fang
+AU  - Pan F
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China. panfang@sdu.edu.cn.
+FAU - Liu, Dexiang
+AU  - Liu D
+AD  - Department of Medical Psychology and Ethics, School of Basic Medicine Sciences, 
+      Cheeloo College of Medicine, Shandong University, Jinan, Shandong, People's 
+      Republic of China. liudexiang@sdu.edu.cn.
+FAU - Ho, Roger C M
+AU  - Ho RCM
+AD  - Department of Psychological Medicine, Yong Loo Lin School of Medicine, National 
+      University of Singapore, Singapore, Singapore.
+AD  - Institute of Health Innovation and Technology (iHealthtech), National University 
+      of Singapore, Singapore, Singapore.
+FAU - Ho, Cyrus S H
+AU  - Ho CSH
+AD  - Department of Psychological Medicine, Yong Loo Lin School of Medicine, National 
+      University of Singapore, Singapore, Singapore.
+LA  - eng
+PT  - Journal Article
+DEP - 20211104
+PL  - England
+TA  - J Neuroinflammation
+JT  - Journal of neuroinflammation
+JID - 101222974
+RN  - 0 (Gastrointestinal Agents)
+RN  - L36O5T016N (Rifaximin)
+SB  - IM
+MH  - Animals
+MH  - Behavior, Animal/drug effects
+MH  - Brain-Gut Axis/*drug effects/physiology
+MH  - *Depression/etiology
+MH  - Gastrointestinal Agents/*pharmacology
+MH  - Gastrointestinal Microbiome/*drug effects/physiology
+MH  - Male
+MH  - Microglia/drug effects/*metabolism
+MH  - Neurogenesis/drug effects
+MH  - Rats
+MH  - Rats, Sprague-Dawley
+MH  - Rifaximin/*pharmacology
+MH  - Stress, Psychological/complications
+PMC - PMC8567657
+OTO - NOTNLM
+OT  - Adolescence
+OT  - Chronic unpredictable mild stress (CUMS)
+OT  - Gut microbiome
+OT  - Microglia
+OT  - Neurogenesis
+OT  - Rifaximin
+OT  - Short chain fatty acid (SCFA)
+COIS- The authors declare that they have no competing interests.
+EDAT- 2021/11/06 06:00
+MHDA- 2022/02/23 06:00
+CRDT- 2021/11/05 05:34
+PHST- 2021/08/18 00:00 [received]
+PHST- 2021/10/20 00:00 [accepted]
+PHST- 2021/11/05 05:34 [entrez]
+PHST- 2021/11/06 06:00 [pubmed]
+PHST- 2022/02/23 06:00 [medline]
+AID - 10.1186/s12974-021-02303-y [pii]
+AID - 2303 [pii]
+AID - 10.1186/s12974-021-02303-y [doi]
+PST - epublish
+SO  - J Neuroinflammation. 2021 Nov 4;18(1):254. doi: 10.1186/s12974-021-02303-y.
+
+PMID- 35135326
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20220425
+LR  - 20220425
+IS  - 1524-4628 (Electronic)
+IS  - 0039-2499 (Linking)
+VI  - 53
+IP  - 4
+DP  - 2022 Apr
+TI  - Cranial Bone Transport Promotes Angiogenesis, Neurogenesis, and Modulates 
+      Meningeal Lymphatic Function in Middle Cerebral Artery Occlusion Rats.
+PG  - 1373-1385
+LID - 10.1161/STROKEAHA.121.037912 [doi]
+AB  - BACKGROUND: Ischemic stroke is a leading cause of death and disability worldwide. 
+      However, the time window for quickly dissolving clots and restoring cerebral 
+      blood flow, using tissue-type plasminogen activator treatment is rather limited, 
+      resulting in many patients experiencing long-term functional impairments if not 
+      death. This study aims to determine the roles of cranial bone transport (CBT), a 
+      novel, effective, and simple surgical technique, in the recovery of ischemic 
+      stroke using middle cerebral artery occlusion (MCAO) rat model. METHODS: CBT was 
+      performed by slowly sliding a bone segment in skull with a special frame and a 
+      speed of 0.25 mm/12 hours for 10 days following MCAO. Morris water maze, rotarod 
+      test, and catwalk gait analysis were used to study the neurological behaviors, 
+      and infarct area and cerebral flow were evaluated during CBT process. 
+      Immunofluorescence staining of CD31 and Nestin/Sox2 (sex determining region Y box 
+      2) was performed to study the angiogenesis and neurogenesis. OVA-A647 
+      (ovalbumin-Alexa Fluor 647) was intracisterna magna injected to evaluate the 
+      meningeal lymphatic drainage function. RESULTS: CBT treatment has significantly 
+      reduced the ischemic lesions areas and improved the neurological deficits in MCAO 
+      rats compared with the rats in the control groups. CBT treatment significantly 
+      promoted angiogenesis and neurogenesis in the brain of MCAO rats. The drainage 
+      function of meningeal lymphatic vessels in MCAO rats was significantly impaired 
+      compared with normal rats. Ablation of meningeal lymphatic drainage led to 
+      increased neuroinflammation and aggravated neurological deficits and ischemic 
+      injury in MCAO rats. CBT treatment significantly improved the meningeal lymphatic 
+      drainage function and alleviated T-cell infiltration in MCAO rats. CONCLUSIONS: 
+      This study provided evidence for the possible mechanisms on how CBT attenuates 
+      ischemic stroke injury and facilitates rapid neuronal function recovery, 
+      suggesting that CBT may be an alternative treatment strategy for managing 
+      ischemic stroke.
+FAU - Bai, Shanshan
+AU  - Bai S
+AUID- ORCID: 0000-0003-3696-9051
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Lu, Xuan
+AU  - Lu X
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Pan, Qi
+AU  - Pan Q
+AD  - Department of Pediatric Orthopaedics, South China Hospital, Health Science 
+      Center, Shenzhen University, Shenzhen, PR China (Q.P.).
+FAU - Wang, Bin
+AU  - Wang B
+AUID- ORCID: 0000-0002-1348-1494
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Pong U, Kin
+AU  - Pong U K
+AUID- ORCID: 0000-0003-2699-2776
+AD  - Key Laboratory for Regenerative Medicine of the Ministry of Education of China, 
+      School of Biomedical Sciences, Faculty of Medicine, The Chinese University of 
+      Hong Kong, Shatin, Hong Kong, SAR, PR China (K.P.U., X.J.).
+FAU - Yang, Yongkang
+AU  - Yang Y
+AUID- ORCID: 0000-0002-1021-7612
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Wang, Haixing
+AU  - Wang H
+AUID- ORCID: 0000-0001-8555-4827
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Lin, Sien
+AU  - Lin S
+AUID- ORCID: 0000-0002-7292-7062
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Feng, Lu
+AU  - Feng L
+AUID- ORCID: 0000-0002-4498-190X
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Wang, Yan
+AU  - Wang Y
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Li, Yucong
+AU  - Li Y
+AUID- ORCID: 0000-0003-4621-5579
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Lin, Weiping
+AU  - Lin W
+AUID- ORCID: 0000-0002-8772-3919
+FAU - Wang, Yujia
+AU  - Wang Y
+AUID- ORCID: 0000-0002-3568-898X
+FAU - Zhang, Xiaoting
+AU  - Zhang X
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Li, Yuan
+AU  - Li Y
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Li, Linlong
+AU  - Li L
+AUID- ORCID: 0000-0001-5927-6712
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Yang, Zhengmeng
+AU  - Yang Z
+AUID- ORCID: 0000-0001-9178-3335
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Wang, Ming
+AU  - Wang M
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Lee, Wayne Yuk-Wai
+AU  - Lee WY
+AUID- ORCID: 0000-0002-0486-360X
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+FAU - Jiang, Xiaohua
+AU  - Jiang X
+AD  - Key Laboratory for Regenerative Medicine of the Ministry of Education of China, 
+      School of Biomedical Sciences, Faculty of Medicine, The Chinese University of 
+      Hong Kong, Shatin, Hong Kong, SAR, PR China (K.P.U., X.J.).
+FAU - Li, Gang
+AU  - Li G
+AUID- ORCID: 0000-0002-3981-2239
+AD  - Department of Orthopaedics & Traumatology, Stem Cells and Regenerative Medicine 
+      Laboratory, Li Ka Shing Institute of Health Sciences, The Chinese University of 
+      Hong Kong, Prince of Wales Hospital, Shatin, Hong Kong, SAR, PR China (S.B., 
+      X.L., B.W., Y.Y., H.W., S.L., L.F., Yan Wang, Yucong Li, W.L., Yujia Wang, X.Z., 
+      Yuan Li, L.L., Z.Y., M.W., W.Y.-W.L., G.L.).
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20220209
+PL  - United States
+TA  - Stroke
+JT  - Stroke
+JID - 0235266
+SB  - IM
+MH  - Animals
+MH  - *Brain Ischemia/therapy
+MH  - Disease Models, Animal
+MH  - Humans
+MH  - Infarction, Middle Cerebral Artery/pathology
+MH  - *Ischemic Stroke
+MH  - Neovascularization, Pathologic
+MH  - Neurogenesis
+MH  - Rats
+MH  - Skull/pathology
+OTO - NOTNLM
+OT  - central nervous system
+OT  - inflammation
+OT  - ischemic stroke
+OT  - neurogenesis
+EDAT- 2022/02/10 06:00
+MHDA- 2022/04/26 06:00
+CRDT- 2022/02/09 05:38
+PHST- 2022/02/10 06:00 [pubmed]
+PHST- 2022/04/26 06:00 [medline]
+PHST- 2022/02/09 05:38 [entrez]
+AID - 10.1161/STROKEAHA.121.037912 [doi]
+PST - ppublish
+SO  - Stroke. 2022 Apr;53(4):1373-1385. doi: 10.1161/STROKEAHA.121.037912. Epub 2022 
+      Feb 9.
+
+PMID- 34333330
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20211006
+LR  - 20211006
+IS  - 1618-095X (Electronic)
+IS  - 0944-7113 (Linking)
+VI  - 91
+DP  - 2021 Oct
+TI  - Sarsasapogenin attenuates Alzheimer-like encephalopathy in diabetes.
+PG  - 153686
+LID - S0944-7113(21)00229-4 [pii]
+LID - 10.1016/j.phymed.2021.153686 [doi]
+AB  - BACKGROUND: A crosstalk exists between diabetes and Alzheimer's disease (AD), and 
+      diabetic encephalopathy displays AD-like disorders. Sarsasapogenin (Sar) has 
+      strong anti-inflammatory efficacy, showing neuroprotection and memory-enhancement 
+      effects. PURPOSE: This study aims to verify the ameliorative effects of Sar on 
+      diabetic encephalopathy in vivo and in vitro, and to clarify the mechanisms from 
+      attenuation of AD-like pathology. METHODS: Streptozotocin-induced type 1 diabetic 
+      rats and high glucose-cultured SH-SY5Y cells were used in this study. After Sar 
+      treatment (20 and 60 mg/kg) for consecutive 9 weeks, Morris water maze and novel 
+      object recognition tasks were performed. Hematoxylin-eosin staining was used for 
+      examining loss of neurons in CA1 area and ki67 expression for reflecting 
+      neurogenesis in DG area of hippocampus. Aβ production pathway and tau 
+      phosphorylation kinase cascade were examined in these two models. RESULTS: Sar 
+      improved learning and memory ability, loss of neurons and reduction of 
+      neurogenesis in the hippocampus of diabetic rats. Moreover, Sar suppressed Aβ 
+      overproduction due to up-regulation of BACE1 in protein and mRNA and tau 
+      hyperphosphorylation from inactivation of AKT/GSK-3β cascade in the hippocampus 
+      and cerebral cortex of diabetic rats and high glucose-cultured SH-SY5Y cells, and 
+      PPARγ antagonism abolished the effects of Sar on key molecules in the two 
+      pathways. Additionally, it was found that high glucose-stimulated Aβ 
+      overproduction was prior to tau hyperphosphorylation in neurons. CONCLUSION: Sar 
+      alleviated diabetic encephalopathy, which was obtained through inhibitions of Aβ 
+      overproduction and tau hyperphosphorylation mediated by the activation of PPARγ 
+      signaling. Hence, Sar is a good candidate compound for AD-like disorders.
+CI  - Copyright © 2021 Elsevier GmbH. All rights reserved.
+FAU - Zhang, Yu-Meng
+AU  - Zhang YM
+AD  - Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical 
+      University, Xuzhou 221004, Jiangsu, China.
+FAU - Zheng, Ting
+AU  - Zheng T
+AD  - Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical 
+      University, Xuzhou 221004, Jiangsu, China.
+FAU - Huang, Ting-Ting
+AU  - Huang TT
+AD  - Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical 
+      University, Xuzhou 221004, Jiangsu, China.
+FAU - Gu, Pan-Pan
+AU  - Gu PP
+AD  - Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical 
+      University, Xuzhou 221004, Jiangsu, China.
+FAU - Gou, Ling-Shan
+AU  - Gou LS
+AD  - Center for Genetic Medicine, Xuzhou Maternity and Child Health Care Hospital, 
+      Xuzhou 221009, Jiangsu, China.
+FAU - Ma, Teng-Fei
+AU  - Ma TF
+AD  - Institute for Stem Cell and Neural Regeneration, School of Pharmacy, Nanjing 
+      Medical University, Nanjing 211166, China.
+FAU - Liu, Yao-Wu
+AU  - Liu YW
+AD  - Jiangsu Key Laboratory of New Drug Research and Clinical Pharmacy, Xuzhou Medical 
+      University, Xuzhou 221004, Jiangsu, China; Department of Pharmacology, School of 
+      Pharmacy, Xuzhou Medical University, Xuzhou 221004, Jiangsu, China. Electronic 
+      address: ywliu@xzhmu.edu.cn.
+LA  - eng
+PT  - Journal Article
+DEP - 20210723
+PL  - Germany
+TA  - Phytomedicine
+JT  - Phytomedicine : international journal of phytotherapy and phytopharmacology
+JID - 9438794
+RN  - 0 (Amyloid beta-Peptides)
+RN  - 0 (PPAR gamma)
+RN  - 0 (Spirostans)
+RN  - 0 (tau Proteins)
+RN  - CFS802C28F (sarsasapogenin)
+RN  - EC 2.7.11.1 (Glycogen Synthase Kinase 3 beta)
+RN  - EC 3.4.- (Amyloid Precursor Protein Secretases)
+RN  - EC 3.4.23.- (Aspartic Acid Endopeptidases)
+SB  - IM
+MH  - *Alzheimer Disease/drug therapy
+MH  - Amyloid Precursor Protein Secretases
+MH  - Amyloid beta-Peptides/metabolism
+MH  - Animals
+MH  - Aspartic Acid Endopeptidases
+MH  - Brain Diseases/*drug therapy
+MH  - Cell Line
+MH  - *Diabetes Mellitus, Experimental/chemically induced/drug therapy
+MH  - Glycogen Synthase Kinase 3 beta
+MH  - Hippocampus/drug effects/metabolism
+MH  - PPAR gamma
+MH  - Phosphorylation
+MH  - Rats
+MH  - Spirostans/*pharmacology
+MH  - tau Proteins/metabolism
+OTO - NOTNLM
+OT  - Alzheimer-like pathology
+OT  - Diabetic encephalopathy
+OT  - Neuroprotection
+OT  - PPARγ
+OT  - SH-SY5Y cells
+OT  - Sarsasapogenin
+EDAT- 2021/08/02 06:00
+MHDA- 2021/10/07 06:00
+CRDT- 2021/08/01 20:55
+PHST- 2021/05/07 00:00 [received]
+PHST- 2021/07/15 00:00 [revised]
+PHST- 2021/07/20 00:00 [accepted]
+PHST- 2021/08/02 06:00 [pubmed]
+PHST- 2021/10/07 06:00 [medline]
+PHST- 2021/08/01 20:55 [entrez]
+AID - S0944-7113(21)00229-4 [pii]
+AID - 10.1016/j.phymed.2021.153686 [doi]
+PST - ppublish
+SO  - Phytomedicine. 2021 Oct;91:153686. doi: 10.1016/j.phymed.2021.153686. Epub 2021 
+      Jul 23.
+
+PMID- 35664075
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20220608
+LR  - 20220716
+IS  - 1838-7640 (Electronic)
+IS  - 1838-7640 (Linking)
+VI  - 12
+IP  - 8
+DP  - 2022
+TI  - Eucommiae cortex polysaccharides mitigate obesogenic diet-induced cognitive and 
+      social dysfunction via modulation of gut microbiota and tryptophan metabolism.
+PG  - 3637-3655
+LID - 10.7150/thno.72756 [doi]
+AB  - Rationale: The high fat and sucrose diet, known as the obesogenic diet (OD), has 
+      been related to low-grade chronic inflammation and neurodevelopmental disorders. 
+      Emerging evidence suggests that OD influences cognitive and social function via 
+      the gut-brain axis. However, the effects of OD during adolescence on future 
+      health have been unclear. Meanwhile, the underlying mechanisms and effective 
+      interventions are not fully understood. Polysaccharides, one of the most abundant 
+      substances in the Eucommiae cortex, exhibit potential immunomodulatory and 
+      neuroprotective effects. Here, we aimed to investigate the impact of OD on 
+      adolescents, explore the modulating roles of Eucommiae cortex polysaccharides 
+      (EPs) on OD-induced behavioral dysfunction, and elucidate the underlying 
+      molecular mechanisms. Methods: In the present study, four-week-old mice were fed 
+      with OD for four weeks to simulate persistent OD in adolescents. The behavioral 
+      features were accessed by open field test and Morris water maze. The gut 
+      bacterial structure was identified by 16S rRNA gene amplicon sequencing. The gene 
+      and protein expression in colonic tissues and hippocampus were detected by 
+      qRT-PCR, immunoblotting, enzyme-linked immunosorbent assay, and 
+      immunofluorescence staining. Detection of biological metabolites in serum and 
+      hippocampal tissues was performed by widely targeted metabolomics and targeted 
+      metabolomics. Results: We found that OD-fed mice showed cognitive and 
+      social-behavioral deficits accompanied by gut dysbiosis and systematic tryptophan 
+      (Trp) metabolism disorders, which increased kynurenine (Kyn) concentration in the 
+      hippocampus. Bacteria-derived lipopolysaccharide (LPS, endotoxin) induced 
+      microglia-mediated neuroinflammation, directing the metabolism of Kyn in the 
+      hippocampus toward quinolinic acid (QA), which led to glutamate-mediated 
+      hyperactivation of mossy cells (MCs) in hippocampal hilus. Furthermore, OD 
+      impaired parvalbumin (PV) interneurons-related local circuits in the hippocampal 
+      granule cell layer. These resulted in hippocampal neurogenesis deficits and 
+      related behavioral dysfunction in mice. EPs supplementation ameliorated 
+      OD-induced gut dysbiosis, as evidenced by inhibiting the expansion of Escherichia 
+      coli (E.coli) and reducing the concentration of LPS in colonic contents and 
+      serum, thereby inhibiting the subsequent neuroinflammation. In addition, oral EPs 
+      suppressed the peripheral Kyn pathway to reduce the concentration of QA and 
+      glutamic acid in the hippocampus of OD-fed mice, thereby rescuing the glutamic 
+      acid-triggered neuroexcitotoxicity. These contributed to remodeling the rhythm of 
+      hippocampal neurogenesis and mitigated behavioral dysfunction in OD-fed mice. 
+      Conclusions: The present study addresses a gap in the understanding of neuronal 
+      dysfunction associated with OD during adolescence and provides the first evidence 
+      that EPs improved cognitive and social behavior via modulation of gut microbiota 
+      and tryptophan metabolism in adolescent mice fed with OD, which may represent 
+      novel preemptive therapy for neurodevelopmental disorders via manipulation of the 
+      tryptophan metabolite.
+CI  - © The author(s).
+FAU - Sun, Penghao
+AU  - Sun P
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Wang, Mengli
+AU  - Wang M
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Li, Zhuoni
+AU  - Li Z
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Wei, Jingjing
+AU  - Wei J
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Liu, Feng
+AU  - Liu F
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Zheng, Wei
+AU  - Zheng W
+AD  - College of Resources and Environment Sciences, Northwest A&F University, 
+      Yangling, China.
+FAU - Zhu, Xiaoyan
+AU  - Zhu X
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+FAU - Chai, Xuejun
+AU  - Chai X
+AD  - College of Basic Medicine, Xi'an Medical University, Xi'an, China.
+FAU - Zhao, Shanting
+AU  - Zhao S
+AD  - College of Veterinary Medicine, Northwest A&F University, Yangling, China.
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20220501
+PL  - Australia
+TA  - Theranostics
+JT  - Theranostics
+JID - 101552395
+RN  - 0 (Lipopolysaccharides)
+RN  - 0 (RNA, Ribosomal, 16S)
+RN  - 343-65-7 (Kynurenine)
+RN  - 3KX376GY7L (Glutamic Acid)
+RN  - 8DUH1N11BX (Tryptophan)
+SB  - IM
+MH  - Animals
+MH  - Cognition
+MH  - Diet
+MH  - Dysbiosis/microbiology
+MH  - *Gastrointestinal Microbiome/physiology
+MH  - Glutamic Acid
+MH  - Kynurenine/pharmacology
+MH  - Lipopolysaccharides/toxicity
+MH  - Mice
+MH  - Mice, Inbred C57BL
+MH  - RNA, Ribosomal, 16S
+MH  - Tryptophan
+PMC - PMC9131264
+OTO - NOTNLM
+OT  - Eucommiae cortex polysaccharides
+OT  - adult neurogenesis
+OT  - amino acid metabolism
+OT  - gut microbiota
+OT  - obesogenic diet
+COIS- Competing Interests: The authors have declared that no competing interest exists.
+EDAT- 2022/06/07 06:00
+MHDA- 2022/06/09 06:00
+CRDT- 2022/06/06 14:09
+PHST- 2022/03/10 00:00 [received]
+PHST- 2022/04/19 00:00 [accepted]
+PHST- 2022/06/06 14:09 [entrez]
+PHST- 2022/06/07 06:00 [pubmed]
+PHST- 2022/06/09 06:00 [medline]
+AID - thnov12p3637 [pii]
+AID - 10.7150/thno.72756 [doi]
+PST - epublish
+SO  - Theranostics. 2022 May 1;12(8):3637-3655. doi: 10.7150/thno.72756. eCollection 
+      2022.
+
+PMID- 33985879
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210630
+LR  - 20210630
+IS  - 1618-095X (Electronic)
+IS  - 0944-7113 (Linking)
+VI  - 87
+DP  - 2021 Jul
+TI  - Gastrodiae rhizoma attenuates brain aging via promoting neuritogenesis and 
+      neurodifferentiation.
+PG  - 153576
+LID - S0944-7113(21)00118-5 [pii]
+LID - 10.1016/j.phymed.2021.153576 [doi]
+AB  - BACKGROUND: Gastrodiae Rhizoma (Tianma), the dried tuber of Gastrodia elata Bl. 
+      (Orchidaceae), is listed as a top-grade herbal medicine in Shen-nong Ben-ts'ao 
+      Jing and has been used for treating headaches, dizziness, vertigo and convulsion. 
+      It has a neuroprotective effect and extends the lifespan in mouse models of 
+      Huntington's disease and Niemann-Pick type C disease. However, its effect on 
+      senescence remains unknown. PURPOSE: This study aimed to investigate the 
+      anti-aging effects and the underlying mechanism of Gastrodiae Rhizoma. METHODS: 
+      D-galactose (D-gal)- and BeSO(4)-induced cellular senescence and 
+      senescence-associated β-galactosidase (SA-β-gal) activity were evaluated in 
+      SH-SY5Y and PC12 cells. D-gal-induced aging mice were used as an in vivo model. 
+      Animal behaviors including nesting and burrowing and Morris water maze were 
+      conducted. Neurogenesis in the hippocampus was assessed by immunohistochemistry 
+      and confocal microscopy, and the aging-related proteins were assessed by Western 
+      blot analysis. The potential neuritogenesis activity of the partially purified 
+      fraction of Gastrodiae Rhizoma (TM-2) and its major ingredients were investigated 
+      in PC12 cells. RESULTS: TM-2 could improve D-gal-induced learning and memory 
+      impairement by inhibiting oxidative stress, increasing hippocampal neurogenesis 
+      and regulating the SH2B1-Akt pathway. Moreover, N(6)-(4-hydroxybenzyl)adenine 
+      riboside (T1-11) and parishins A and B, three constituents of TM-2, had 
+      anti-aging activity, as did T1-11 and parishin A induced neuritogenesis. 
+      CONCLUSION: Our data suggested that TM-2 slowed down D-gal-induced cellular and 
+      mouse brain aging. These results indicate that Gastrodiae Rhizoma has a 
+      beneficial effect on senescence. It may be used for neuroprotection and promoting 
+      neurogenesis.
+CI  - Copyright © 2021. Published by Elsevier GmbH.
+FAU - Hsu, Wei-Hsiang
+AU  - Hsu WH
+AD  - Department of Chinese Pharmaceutical Sciences and Chinese Medicine Resources, 
+      China Medical University, Taichung 40402, Taiwan.
+FAU - Huang, Nai-Kuei
+AU  - Huang NK
+AD  - National Research Institute of Chinese Medicine, Ministry of Health and Welfare, 
+      Taipei 11221, Taiwan.
+FAU - Shiao, Young-Ji
+AU  - Shiao YJ
+AD  - National Research Institute of Chinese Medicine, Ministry of Health and Welfare, 
+      Taipei 11221, Taiwan; Institute of Biopharmaceutical Science, National Yang Ming 
+      Chiao Tung University, Taipei 11221, Taiwan.
+FAU - Lu, Chung-Kuang
+AU  - Lu CK
+AD  - National Research Institute of Chinese Medicine, Ministry of Health and Welfare, 
+      Taipei 11221, Taiwan.
+FAU - Chao, Yen-Ming
+AU  - Chao YM
+AD  - Department of Chinese Pharmaceutical Sciences and Chinese Medicine Resources, 
+      China Medical University, Taichung 40402, Taiwan.
+FAU - Huang, Yi-Jeng
+AU  - Huang YJ
+AD  - Department of Chinese Pharmaceutical Sciences and Chinese Medicine Resources, 
+      China Medical University, Taichung 40402, Taiwan.
+FAU - Yeh, Chih-Hsin
+AU  - Yeh CH
+AD  - Taoyuan District Agricultural Research and Extension Station, Council of 
+      Agriculture, Executive Yuan, Taoyuan 32754, Taiwan.
+FAU - Lin, Yun-Lian
+AU  - Lin YL
+AD  - Department of Chinese Pharmaceutical Sciences and Chinese Medicine Resources, 
+      China Medical University, Taichung 40402, Taiwan; Department of Pharmacy, 
+      National Taiwan University, Taipei 10050, Taiwan. Electronic address: 
+      yllin@mail.cmu.edu.tw.
+LA  - eng
+PT  - Journal Article
+DEP - 20210418
+PL  - Germany
+TA  - Phytomedicine
+JT  - Phytomedicine : international journal of phytotherapy and phytopharmacology
+JID - 9438794
+RN  - 0 (Drugs, Chinese Herbal)
+RN  - X2RN3Q8DNE (Galactose)
+SB  - IM
+MH  - Aging/*drug effects
+MH  - Animals
+MH  - Behavior, Animal/drug effects
+MH  - Cellular Senescence/*drug effects
+MH  - Disease Models, Animal
+MH  - Drugs, Chinese Herbal/pharmacology
+MH  - Galactose
+MH  - Gastrodia/*chemistry
+MH  - Hippocampus/cytology/*drug effects/physiology
+MH  - Male
+MH  - Mice
+MH  - Neurogenesis/drug effects
+MH  - Oxidative Stress/drug effects
+MH  - PC12 Cells
+MH  - Rats
+MH  - Rhizome/*chemistry
+OTO - NOTNLM
+OT  - Anti-aging
+OT  - Gastrodiae rhizoma
+OT  - Neuritogenesis
+OT  - Neurogenesis
+OT  - Senescence
+OT  - Tianma
+EDAT- 2021/05/15 06:00
+MHDA- 2021/07/01 06:00
+CRDT- 2021/05/14 05:51
+PHST- 2020/05/04 00:00 [received]
+PHST- 2021/03/23 00:00 [revised]
+PHST- 2021/04/15 00:00 [accepted]
+PHST- 2021/05/15 06:00 [pubmed]
+PHST- 2021/07/01 06:00 [medline]
+PHST- 2021/05/14 05:51 [entrez]
+AID - S0944-7113(21)00118-5 [pii]
+AID - 10.1016/j.phymed.2021.153576 [doi]
+PST - ppublish
+SO  - Phytomedicine. 2021 Jul;87:153576. doi: 10.1016/j.phymed.2021.153576. Epub 2021 
+      Apr 18.
+
+PMID- 34419525
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20220223
+LR  - 20220223
+IS  - 1872-9754 (Electronic)
+IS  - 0197-0186 (Linking)
+VI  - 150
+DP  - 2021 Nov
+TI  - Gastrodin promotes hippocampal neurogenesis via PDE9-cGMP-PKG pathway in mice 
+      following cerebral ischemia.
+PG  - 105171
+LID - S0197-0186(21)00217-5 [pii]
+LID - 10.1016/j.neuint.2021.105171 [doi]
+AB  - Gastrodin, which is extracted from the Chinese herbal medicine Gastrodia elata 
+      Blume, can ameliorate neurogenesis after cerebral ischemia. However, it's 
+      possible underlying mechanisms remain still elusive. PDE9-cGMP-PKG signaling 
+      pathway is involved in the proliferation of neural stem cells (NSCs) after 
+      cerebral ischemia. In this study, we investigated whether the beneficial effect 
+      of gastrodin on hippocampal neurogenesis after cerebral ischemia is correlated 
+      with the PDE9-cGMP-PKG signaling pathway. Bilateral common carotid artery 
+      occlusion (BCCAO) in mice and oxygen-glucose deprivation/reoxygenation (OGD/R) in 
+      primary cultured hippocampal NSCs were used to mimic brain ischemic injury. The 
+      Morris water maze (MWM) test was executed to detect spatial learning and memory. 
+      Proliferation, differentiation, and mature neurons were examined using 
+      immunofluorescence. The survival and proliferation of NSCs were assessed by CCK-8 
+      assay and BrdU immunofluorescence staining, respectively. ELISA and western blot 
+      were used to detect the level of the PDE9-cGMP-PKG signaling pathway. In BCCAO 
+      mice, administering gastrodin (50 and 100 mg/kg) for 14 d restored cognitive 
+      behaviors; meanwhile, neurogenesis in hippocampus was stimulated, and PDE9 was 
+      inhibited and cGMP-PKG was activated by gastrodin. Consistent with the results, 
+      administering gastrodin (from 0.01-1 μmol/L) for 48 h dose-dependently 
+      ameliorated the cell viability and promoted greatly the proliferation in primary 
+      hippocampal NSCs exposed to OGD/R. Gastrodin further decreased PDE9 activity and 
+      up-regulated cGMP-PKG level. KT5823, a PKG inhibitor, markedly abrogated the 
+      protective effects of gastrodin on OGD/R-injured NSCs, accompanied by the 
+      down-regulation of PKG protein expression, but had no effects on PDE9 activity 
+      and cGMP level. Gastrodin could accelerate hippocampal neurogenesis after 
+      cerebral ischemia, which is mediated, at least partly, by PDE9-cGMP-PKG signaling 
+      pathway.
+CI  - Copyright © 2021. Published by Elsevier Ltd.
+FAU - Xiao, Huan
+AU  - Xiao H
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China; Second Affiliated 
+      Hospital of Chengdu Medical College, China National Nuclear Corporation 416 
+      Hospital, Chengdu, China.
+FAU - Jiang, Qingsong
+AU  - Jiang Q
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China.
+FAU - Qiu, Hongmei
+AU  - Qiu H
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China.
+FAU - Wu, Ke
+AU  - Wu K
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China.
+FAU - Ma, Xiaojiao
+AU  - Ma X
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China.
+FAU - Yang, Junxia
+AU  - Yang J
+AD  - Department of Pharmacology, College of Pharmacy, Chongqing Key Lab of 
+      Biochemistry and Molecular Pharmacology, Chongqing Key Laboratory of Drug 
+      Metabolism, Chongqing Medical University, Chongqing, China.
+FAU - Cheng, Oumei
+AU  - Cheng O
+AD  - Department of Neurology, The First Affiliated Hospital of Chongqing Medical 
+      University, Chongqing, China. Electronic address: chengoumei@cqmu.edu.cn.
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20210819
+PL  - England
+TA  - Neurochem Int
+JT  - Neurochemistry international
+JID - 8006959
+RN  - 0 (Benzyl Alcohols)
+RN  - 0 (Glucosides)
+RN  - 5YS9U2W3RQ (gastrodin)
+RN  - EC 2.7.11.12 (Cyclic GMP-Dependent Protein Kinases)
+RN  - EC 3.1.4.17 (3',5'-Cyclic-AMP Phosphodiesterases)
+RN  - EC 3.1.4.17 (Pde9a protein, mouse)
+RN  - H2D2X058MU (Cyclic GMP)
+SB  - IM
+MH  - 3',5'-Cyclic-AMP Phosphodiesterases/antagonists & inhibitors/*metabolism
+MH  - Animals
+MH  - Animals, Newborn
+MH  - Benzyl Alcohols/*pharmacology/therapeutic use
+MH  - Brain Ischemia/drug therapy/*metabolism
+MH  - Cells, Cultured
+MH  - Cyclic GMP/*metabolism
+MH  - Cyclic GMP-Dependent Protein Kinases/*metabolism
+MH  - Gastrodia
+MH  - Glucosides/*pharmacology/therapeutic use
+MH  - Hippocampus/cytology/drug effects/*metabolism
+MH  - Male
+MH  - Maze Learning/drug effects/physiology
+MH  - Mice
+MH  - Mice, Inbred C57BL
+MH  - Neurogenesis/*drug effects/physiology
+MH  - Rats
+MH  - Rats, Sprague-Dawley
+MH  - Signal Transduction/drug effects/physiology
+OTO - NOTNLM
+OT  - Cerebral ischemia
+OT  - Gastrodin
+OT  - Neurogenesis
+OT  - PDE9
+OT  - Signaling pathway
+OT  - cGMP-PKG
+EDAT- 2021/08/23 06:00
+MHDA- 2022/02/24 06:00
+CRDT- 2021/08/22 20:44
+PHST- 2021/01/15 00:00 [received]
+PHST- 2021/07/04 00:00 [revised]
+PHST- 2021/08/18 00:00 [accepted]
+PHST- 2021/08/23 06:00 [pubmed]
+PHST- 2022/02/24 06:00 [medline]
+PHST- 2021/08/22 20:44 [entrez]
+AID - S0197-0186(21)00217-5 [pii]
+AID - 10.1016/j.neuint.2021.105171 [doi]
+PST - ppublish
+SO  - Neurochem Int. 2021 Nov;150:105171. doi: 10.1016/j.neuint.2021.105171. Epub 2021 
+      Aug 19.
