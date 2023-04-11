@@ -1,0 +1,14 @@
+{
+  "hash": "087a0d845620b896590108d8ea703bc1",
+  "result": {
+    "markdown": "---\ntitle: \"experimentos_analisis_limpio\"\nformat: pptx\n---\n\n\n# Water Maze\n\n-   Librerías a usar:\n\n\n::: {.cell}\n\n:::\n\n\n-   Leer datos\n\n\n::: {.cell}\n\n:::\n\n\n-   Ver nombre de columnas\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n [1] \"Test\"                                 \n [2] \"Animal\"                               \n [3] \"Treatment\"                            \n [4] \"Stage\"                                \n [5] \"Trial\"                                \n [6] \"Date\"                                 \n [7] \"Time\"                                 \n [8] \"Duration\"                             \n [9] \"Distance\"                             \n[10] \"Mean.speed\"                           \n[11] \"SE.cuadrante...time\"                  \n[12] \"SWcuadrante...time\"                   \n[13] \"NW.Cuadrante...time\"                  \n[14] \"NE.cuadrante...time\"                  \n[15] \"Annulus.NE...entries\"                 \n[16] \"Annulus.NE...latency.to.first.entry\"  \n[17] \"Annulus.NE...mean.distance.from\"      \n[18] \"Annulus.NE...path.efficiency.to.entry\"\n[19] \"Annulus.NE...CIPL\"                    \n[20] \"Annulus.SW...entries\"                 \n[21] \"Annulus.SW...latency.to.first.entry\"  \n[22] \"Annulus.SW...mean.distance.from\"      \n[23] \"Annulus.SW...path.efficiency.to.entry\"\n[24] \"Annulus.SW...CIPL\"                    \n```\n:::\n:::\n\n\n\\-\\-\\-\\--\n\n# jjjj\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

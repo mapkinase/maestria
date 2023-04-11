@@ -1,0 +1,35 @@
+/* styles.css */
+
+/* Style the sidebar panel */
+.sidebar-panel {
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the main panel */
+.main-panel {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the h3 headings */
+h3 {
+  color: #337ab7;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Add some margin to the tables */
+.table {
+  margin-top: 10px;
+}
+
+/* Style the logo image in the title panel */
+.title-panel img {
+  margin-right: 10px;
+  vertical-align: middle;
+}

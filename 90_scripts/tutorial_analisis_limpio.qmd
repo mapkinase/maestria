@@ -1,0 +1,1443 @@
+---
+title: "tutorial_analisis_limpio"
+
+format: gfm
+
+lenguaje: r
+librería: tidyverse, stringr
+proyecto: maestría
+archive: FALSE
+pendiente: TRUE
+autor: Santi
+tags: 
+---
+
+# Water Maze
+
+-   Librerías a usar:
+
+```{r}
+library(tidyverse)
+```
+
+-   Leer datos
+
+```{r}
+datos_crudos <- read.csv("water_maze/datos_crudos_any_maze.csv")
+```
+
+-   Ver nombre de columnas
+
+```{r}
+colnames(datos_crudos)
+```
+
+## Entrenamientos
+
+### Tidy Data
+
+#### Filtter(), select() / library(stringr)
+
+-   *filter()* filtra rows , ver: [dplyr_filter](https://sebastiansauer.github.io/dplyr_filter/ "usos y casos de dplyr")
+
+-   para filtar los entrenamientos, usaremos library(stringr)
+
+<!-- -->
+
+    ```{r}
+    library(stringr)
+    ```
+
+-   El script filtra los datos por entrenamiento y elimina los de pre-entrenamiento y reversa
+
+-   [ ] PENDIENTE: hacer que el filter haga todo en un paso , tal vez con Regex?
+
+-   Después filtramos las columas (variables) que queremos con *select*
+
+```{r}
+
+entrenamientos <- datos_crudos |>
+  group_by(Treatment, Stage) |>
+  filter(str_detect(Stage, "entrenamiento")) |> # selecciona rows que en la columna tengan el valor de entrenamiento
+  filter(!str_detect(Stage, "pre")) |> # elimina columnas que en stage tengan pre (esos datos no me sirven)
+  select(Treatment, # selecciona columnas con variables de interes
+         Stage, 
+         Duration, 
+         Distance, 
+         Mean.speed, 
+         Annulus.NE...path.efficiency.to.entry, 
+         Annulus.NE...CIPL, 
+         Annulus.SW...latency.to.first.entry,
+         Annulus.SW...CIPL)
+
+
+head(entrenamientos)
+```
+
+#### Estadísticos de entrenamientos
+
+-   Hacemos un dataframe con los estadísticos de todas las variables que nos interesan
+-   Este código elimina los datos con NA para poder hacer los cálculos
+    -   En teoría se podría reemplazar los NA con la media (imputar), ver \[\[\]\] **Poner nota**
+-   Una forma más fácil sería hacerlo con una función que calcule N, media, SD y SE de todos los datos numéricos, ver \[\[\]\] **Poner nota**
+
+```{r}
+entrenamientos_estadisticos <- entrenamientos |>
+  group_by(Treatment, Stage) %>%
+  dplyr::summarise( # usamos dplyr::summarise para evitar conflictos en paquetes
+    # Latencia
+    N_latencia  = sum(!is.na(Duration)), # Calcula la N
+    media_latencia = mean(Duration, na.rm=TRUE), # calcula la media
+    sd_latencia = sd(Duration, na.rm=TRUE), # calcula la SD
+    se_latencia = sd_latencia / sqrt(N_latencia), # calcula SE
+    # Distancia
+    N_distancia  = sum(!is.na(Distance)),
+    media_distancia = mean(Distance, na.rm=TRUE),
+    sd_distancia = sd(Distance, na.rm=TRUE),
+    se_distancia = sd_distancia / sqrt(N_distancia),
+    # velocidad promedio
+    N_velocidad  = sum(!is.na(Mean.speed)),
+    media_velocidad = mean(Mean.speed, na.rm=TRUE),
+    sd_velocidad = sd(Mean.speed, na.rm=TRUE),
+    se_velocidad = sd_velocidad / sqrt(N_velocidad),
+    # eficiencia annulus NE
+    N_eficiencia_NE  = sum(!is.na(Annulus.NE...path.efficiency.to.entry)),
+    media_eficiencia_NE = mean(Annulus.NE...path.efficiency.to.entry, na.rm=TRUE),
+    sd_eficiencia_NE = sd(Annulus.NE...path.efficiency.to.entry, na.rm=TRUE),
+    se_eficiencia_NE = sd_eficiencia_NE / sqrt(N_eficiencia_NE),
+    # CIPL annulus NE
+    N_cipl_NE  = sum(!is.na(Annulus.NE...CIPL)),
+    media_cipl_NE = mean(Annulus.NE...CIPL, na.rm=TRUE),
+    sd_cipl_NE = sd(Annulus.NE...CIPL, na.rm=TRUE),
+    se_cipl_NE = sd_cipl_NE / sqrt(N_cipl_NE),
+    # eficiencia annulus SO
+    N_eficiencia_SO  = sum(!is.na(Annulus.SW...CIPL)),
+    media_eficiencia_SO = mean(Annulus.SW...CIPL, na.rm=TRUE),
+    sd_eficiencia_SO = sd(Annulus.SW...CIPL, na.rm=TRUE),
+    se_eficiencia_SO = sd_eficiencia_SO / sqrt(N_eficiencia_SO),
+    # CIPL annulus SO
+    N_cipl_SO  = sum(!is.na(Annulus.SW...CIPL)),
+    media_cipl_SO = mean(Annulus.SW...CIPL, na.rm=TRUE),
+    sd_cipl_SO = sd(Annulus.SW...CIPL, na.rm=TRUE),
+    se_cipl_SO = sd_cipl_SO / sqrt(N_cipl_SO)
+  )
+
+head(entrenamientos_estadisticos)
+
+colnames(entrenamientos_estadisticos)
+```
+
+### Gráficos de variables
+
+#### Latencias
+
+```{r}
+ggplot(
+  data = entrenamientos_estadisticos, 
+  aes(
+    x = Stage, 
+    y = media_latencia, 
+    colour = Treatment)) +
+  geom_point(aes(
+    colour = Treatment), 
+    alpha = 1, 
+    size = 4) +
+  geom_line(aes(
+    group = Treatment)) +
+  scale_color_manual(
+    values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(
+    ymin = media_latencia - se_latencia, 
+    ymax = media_latencia + se_latencia), width = .1, size = 1) +
+  labs(
+    title = "Latencia en entrenamienos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM \n \n línea roja muestra 'cut off'de aprendizaje (17 segundos)" ,
+    x = "Día de entrenamiento",
+    y = "Latencia promedio (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.2),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  geom_hline(yintercept = 17, linetype = "dotted", color = "red", size = .6) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+```
+
+#### Distancia
+
+```{r}
+ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_distancia, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_distancia - se_distancia, ymax = media_distancia + se_distancia), width = .1, size = 1) +
+  labs(
+    title = "distancia recorrida entrenamienos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "Día de entrenamiento",
+    y = "distancia (m)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+```
+
+#### Velocidad
+
+```{r}
+ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_velocidad, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_velocidad - se_velocidad, ymax = media_velocidad + se_velocidad), width = .1, size = 1) +
+  labs(
+    title = "velocidad promedio en entrenamientos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "Día de entrenamiento",
+    y = "velocidad promedio (m/s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+```
+
+#### Eficiencia Annulus_NE
+
+```{r}
+ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_eficiencia_NE, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_eficiencia_NE - se_eficiencia_NE, ymax = media_eficiencia_NE + se_eficiencia_NE), width = .1, size = 1) +
+  labs(
+    title = "eficiencia Annulus NE",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n  \n Se muestra con SEM
+    \n \n NOTA: Ignorar Entrenamientos reversa",
+    x = "Día de entrenamiento",
+    y = "eficiencia"
+  ) +
+  theme(
+    plot.margin = unit(c(2,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.3),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+```
+
+#### Eficiencia Annulus_SO
+
+```{r}
+ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_eficiencia_SO, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_eficiencia_SO - se_eficiencia_SO, ymax = media_eficiencia_SO + se_eficiencia_SO), width = .1, size = 1) +
+  labs(
+    title = "eficiencia Annulus SO Reversa",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM
+    \n \n NOTA: Ignorar entrenamientos 1 ,2 ,3 y 4",
+    x = "Día de entrenamiento",
+    y = "eficiencia"
+  ) +
+  theme(
+    plot.margin = unit(c(2,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.3),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+```
+
+### Juntar gráficas en un multigráfico
+
+-   Ver \[\[\]\] NOTA: link a nota de multigráficios
+
+-   Tenemos que guardar los gráficos en variables
+
+#### Guardar gráficos en variables
+
+```{r}
+
+# latencia ----
+latencia <- ggplot(
+  data = entrenamientos_estadisticos, 
+  aes(
+    x = Stage, 
+    y = media_latencia, 
+    colour = Treatment)) +
+  geom_point(aes(
+    colour = Treatment), 
+    alpha = 1, 
+    size = 4) +
+  geom_line(aes(
+    group = Treatment)) +
+  scale_color_manual(
+    values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(
+    ymin = media_latencia - se_latencia, 
+    ymax = media_latencia + se_latencia), width = .1, size = 1) +
+  labs(
+    title = "Latencia en entrenamienos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM \n \n línea roja muestra 'cut off'de aprendizaje (17 segundos)" ,
+    x = "Día de entrenamiento",
+    y = "Latencia promedio (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.2),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  geom_hline(yintercept = 17, linetype = "dotted", color = "red", size = .6) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+# distancia ----
+distancia <- ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_distancia, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_distancia - se_distancia, ymax = media_distancia + se_distancia), width = .1, size = 1) +
+  labs(
+    title = "distancia recorrida entrenamienos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "Día de entrenamiento",
+    y = "distancia (m)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+# Velocidad ----
+                                   
+velocidad <- ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_velocidad, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_velocidad - se_velocidad, ymax = media_velocidad + se_velocidad), width = .1, size = 1) +
+  labs(
+    title = "velocidad promedio en entrenamientos de Water Maze",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "Día de entrenamiento",
+    y = "velocidad promedio (m/s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+# Eficiencia ne ----
+eficiencia_NE <- ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_eficiencia_NE, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_eficiencia_NE - se_eficiencia_NE, ymax = media_eficiencia_NE + se_eficiencia_NE), width = .1, size = 1) +
+  labs(
+    title = "eficiencia Annulus NE",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n  \n Se muestra con SEM
+    \n \n NOTA: Ignorar Entrenamientos reversa",
+    x = "Día de entrenamiento",
+    y = "eficiencia"
+  ) +
+  theme(
+    plot.margin = unit(c(2,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.3),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+# eficiencia SO ----
+eficiencia_SO <- ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_eficiencia_SO, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_eficiencia_SO - se_eficiencia_SO, ymax = media_eficiencia_SO + se_eficiencia_SO), width = .1, size = 1) +
+  labs(
+    title = "eficiencia Annulus SO Reversa",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM
+    \n \n NOTA: Ignorar entrenamientos 1 ,2 ,3 y 4",
+    x = "Día de entrenamiento",
+    y = "eficiencia"
+  ) +
+  theme(
+    plot.margin = unit(c(2,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=13, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 7, color = "black"),
+    axis.text.y = element_text(size=10), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=5)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.9,1.3),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', '3', '4', '1-Reversa', '2-Reversa'))
+
+```
+
+#### multiplot
+
+##### función muliplot
+
+```{r}
+# Multiple plot function
+#
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+
+  numPlots = length(plots)
+
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+
+ if (numPlots==1) {
+    print(plots[[1]])
+
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+```
+
+##### gráficos multiplot - latencia + distancia + velocidad
+
+```{r}
+multiplot(latencia, distancia, velocidad, cols = 3)
+```
+
+##### gráficos multiplot - eficiencia annulus
+
+```{r}
+multiplot(eficiencia_NE, eficiencia_SO, cols = 2)
+```
+
+## Pruebas
+
+-   NOTA; aqui voy a modificar desde excel el dataframe original para hacer más facil el analisis
+-   en lugar de hacer un mutate y case_when para transformar los cuadrantes blanco en un solo valor
+-   lo voy a hacer en excel
+-   [ ] PENDIENTE; hacerlo con case_when y mutate
+-   Haré lo mismo con todas las mediciones para tener una sola gráfica
+-   Esto porque en el dataframe el cuadrante blanco para las pruebas 1 y 2 no son el mismo que para las reversa
+-   Los porcentajes de cuadrante blanco vs otros también se sacaron directo en el excel
+-   Otros cuadrantes se sacó el promedio mean (tiempo_cuad_1 + tiempo_cuad 2...)
+
+
+### Código para gráficos
+
+```{r}
+
+
+pruebas <- read.csv('water_maze/datos_crudos_any_maze_para_pruebas.csv') 
+colnames(pruebas)
+
+
+## Estadísticos ----
+pruebas_estadisticos <- pruebas |>
+  group_by(Treatment, Stage) %>%
+  dplyr::summarise(
+    # cuadrante_blanco
+    N_cuadrante_blanco  = sum(!is.na(cuadrante_blanco)),
+    media_cuadrante_blanco = mean(cuadrante_blanco, na.rm=TRUE),
+    sd_cuadrante_blanco = sd(cuadrante_blanco, na.rm=TRUE),
+    se_cuadrante_blanco = sd_cuadrante_blanco / sqrt(N_cuadrante_blanco),
+    # cuadrante_opuestos
+    N_cuadrante_opuestos  = sum(!is.na(cuadrante_opuestos)),
+    media_cuadrante_opuestos = mean(cuadrante_opuestos, na.rm=TRUE),
+    sd_cuadrante_opuestos = sd(cuadrante_opuestos, na.rm=TRUE),
+    se_cuadrante_opuestos = sd_cuadrante_opuestos / sqrt(N_cuadrante_opuestos),
+    # annulus_cruces_blanco
+    N_annulus_cruces_blanco  = sum(!is.na(annulus_cruces_blanco)),
+    media_annulus_cruces_blanco = mean(annulus_cruces_blanco, na.rm=TRUE),
+    sd_annulus_cruces_blanco = sd(annulus_cruces_blanco, na.rm=TRUE),
+    se_annulus_cruces_blanco = sd_annulus_cruces_blanco / sqrt(N_annulus_cruces_blanco),
+    # annulus_dist_promedio_blanco
+    N_annulus_dist_promedio_blanco  = sum(!is.na(annulus_dist_promedio_blanco)),
+    media_annulus_dist_promedio_blanco = mean(annulus_dist_promedio_blanco, na.rm=TRUE),
+    sd_annulus_dist_promedio_blanco = sd(annulus_dist_promedio_blanco, na.rm=TRUE),
+    se_annulus_dist_promedio_blanco = sd_annulus_dist_promedio_blanco / sqrt(N_annulus_dist_promedio_blanco)
+  )
+
+
+colnames(pruebas_estadisticos)
+
+
+## porcentaje_cuadrante blanco ----
+
+
+cuadrante_blanco <- ggplot(data = pruebas_estadisticos, aes(x = Stage, y = media_cuadrante_blanco, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff", "#044400")) +
+  geom_errorbar(aes(ymin = media_cuadrante_blanco - se_cuadrante_blanco, ymax = media_cuadrante_blanco + se_cuadrante_blanco), width = .1, size = 1) +
+  labs(
+    title = "porcentaje en cuadrante blanco en 3 pruebas",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "número de prueba",
+    y = "porcentaje (%)"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=15, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 13, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(1,1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', 'reversa'))
+
+
+## porcentaje_cuadrantes opuestos ----
+
+
+cuadrante_opuestos <- ggplot(data = pruebas_estadisticos, aes(x = Stage, y = media_cuadrante_opuestos, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff", "#044400")) +
+  geom_errorbar(aes(ymin = media_cuadrante_opuestos - se_cuadrante_opuestos, ymax = media_cuadrante_opuestos + se_cuadrante_opuestos), width = .1, size = 1) +
+  labs(
+    title = "porcentaje en cuadrante opuestos en 3 pruebas",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM", 
+    x = "número de prueba",
+    y = "porcentaje (%)"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=15, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 13, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(1,1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', 'reversa'))
+
+## numero_cruces ----
+
+cruces <- ggplot(data = pruebas_estadisticos, aes(x = Stage, y = media_annulus_cruces_blanco, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff", "#044400")) +
+  geom_errorbar(aes(ymin = media_annulus_cruces_blanco - se_annulus_cruces_blanco, ymax = media_annulus_cruces_blanco + se_annulus_cruces_blanco), width = .1, size = 1) +
+  labs(
+    title = "cruces",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n Se muestra con SEM",
+    x = "número de prueba",
+    y = "número de cruces annulus"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=15, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 13, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(1,1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', 'reversa'))
+
+## distancia_promedio_annulus ----
+
+dist_promedio <- ggplot(data = pruebas_estadisticos, aes(x = Stage, y = media_annulus_dist_promedio_blanco, colour = Treatment)) +
+  geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
+  geom_line(aes(group = Treatment)) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff", "#044400")) +
+  geom_errorbar(aes(ymin = media_annulus_dist_promedio_blanco - se_annulus_dist_promedio_blanco, ymax = media_annulus_dist_promedio_blanco + se_annulus_dist_promedio_blanco), width = .1, size = 1) +
+  labs(
+    title = "distancia promedio a annulus blanco",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+    x = "número de prueba",
+    y = "metros"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=15, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 13, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(1,1),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+  scale_x_discrete(labels=c('1', '2', 'reversa'))
+
+
+
+## Pendiente ; comparar con annulus antiguo
+
+# Pasar a formato largo
+
+pruebas <- read.csv('water_maze/datos_crudos_any_maze_para_pruebas.csv') |>
+  group_by(Treatment, Stage) |>
+  pivot_longer(
+    cols = starts_with('cuadrante'),
+    names_to = 'tipo_cuadrante',
+    values_to = 'porcentaje_cuadrante'
+  ) |>
+  pivot_longer(
+    cols = starts_with('annulus_cruces'),
+    names_to = 'tipo_annulus_cruces',
+    values_to = 'numero_cruces'
+  ) |>
+  pivot_longer(
+    cols = starts_with('annulus_dist'),
+    names_to = 'tipo_annulus_dist',
+    values_to = 'distancia_promedio_annulus')
+
+
+# entropía con datos de rtrack
+
+library(Rtrack)
+rtrack <- read.csv("water_maze/fluoxetina_grupo_1_resultados_crudos_totales.csv")
+
+colnames(rtrack)
+
+entropia_pruebas <- rtrack |>
+  group_by(tratamiento, X_Day) |>
+  select(X_Day, Probe, tratamiento, roaming.entropy) |>
+  filter(str_detect(Probe, "TRUE"))
+
+colnames(entropia_pruebas)
+
+# Graficos
+ggplot(data = entropia_pruebas, aes(x = X_Day, y = roaming.entropy, colour = tratamiento)) +
+  geom_boxplot()+
+  facet_grid(~ X_Day)
+
+# Con estadísticos 
+entropia_estadistica <- entropia_pruebas |>
+  group_by(tratamiento, X_Day) %>%
+  dplyr::summarise(
+    N_entropia  = sum(!is.na(roaming.entropy)),
+    media_entropia = mean(roaming.entropy, na.rm=TRUE),
+    sd_entropia = sd(roaming.entropy, na.rm=TRUE),
+    se_entropia = sd_entropia / sqrt(N_entropia)
+  )
+
+colnames(entropia_estadistica)
+# gráficos con estadística
+
+
+
+entropia <- ggplot(data = entropia_estadistica, aes(x = X_Day , 
+                                          y = media_entropia, 
+                                          group = tratamiento,
+                                          colour = tratamiento)) +
+  geom_line(aes(colour = tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff", "#044400")) +
+  geom_errorbar(aes(
+    ymin = media_entropia - se_entropia, 
+    ymax = media_entropia + se_entropia), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Entropía",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "H"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=15, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.7, 1.2),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) +
+    scale_x_discrete(labels=c('1', '2', 'reversa'))
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+#   
+```
+### Multigráficos
+
+
+#### porcentajes en cuadrantes y número de cruces
+```{r}
+multiplot(cuadrante_blanco, cruces, cuadrante_opuestos, cols = 2)
+```
+
+#### entropia, distancia media a annulus
+```{r}
+multiplot(entropia, dist_promedio, cols = 2)
+```
+
+
+# Nado Forzado
+
+## Inmovilidad tiempo pre CUMS vs post CUMS
+
+```{r}
+datos_crudos <- read.csv("nado_forzado/datos_crudos.csv")
+colnames(datos_crudos)
+
+inmobilidad_estadistica <- datos_crudos |>
+  group_by(Condicion, Stage) %>%
+  dplyr::summarise(
+    N_inmobilidad  = sum(!is.na(Time.immobile)),
+    media_inmobilidad = mean(Time.immobile, na.rm=TRUE),
+    sd_inmobilidad = sd(Time.immobile, na.rm=TRUE),
+    se_inmobilidad = sd_inmobilidad / sqrt(N_inmobilidad)
+  )
+
+
+
+ggplot(inmobilidad_estadistica, 
+         aes(x = Condicion, y = media_inmobilidad, group = Condicion, colour = Condicion )) +
+    geom_point(aes(colour = Condicion), alpha = 1, size = 4) +
+    geom_line(aes(group = Condicion)) +
+    facet_grid(~factor(Stage, levels = c('precums', 'Post-cums')))+
+    scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+    geom_errorbar(aes(ymin = media_inmobilidad - se_inmobilidad, ymax = media_inmobilidad + se_inmobilidad), width = .1, size = 1) +
+    labs(
+      title = "Teimpo de inmovilidad - Nado Forzado",
+      subtitle = "Fluoxetina Grupo 1",
+      caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n Se muestra con SEM",
+      x = "tratamiento",
+      y = "segundos (s)" 
+    ) +
+    theme(
+      plot.margin = unit(c(2,2,2,2), "cm"),
+      panel.background = element_blank(),
+      axis.line = element_line(color = "#1209c8"),
+      axis.title = element_text(size=10, color="black", 
+                                face="bold"),
+      axis.text = element_text(size = 9, color = "black"),
+      axis.text.y = element_text(size=17), 
+      axis.ticks.x = element_blank(),
+      axis.text.x = element_text(margin = margin(t=10)),
+      axis.title.y=element_text(margin = margin(r=10)),
+      legend.position = c(1,1.2),
+      legend.text = element_text(size=10),
+      legend.background = element_rect(color="black")) 
+  
+# Como ya había diferencia en consumo entre cums control vs cum fluox
+# voy a grafica el aumento en inmovilidad de cada grupo
+# voy a hacer con excel
+  # PENDIETNE, hacerlo con código   
+
+# write.csv(inmobilidad_estadistica, "inmobilidad_estadistica_de_r.csv")
+```
+
+
+## Aumento de mobilidad
+- Como había diferencia en consumo previo (precums) entre los tratamiento, vamos a ver cuánto aumenta la movilidad para cada tratamiento
+- Lo voy a hacer en excel
+- [ ] PENDIENTE: Hacerlo en R
+
+```{r}
+aumento_inmovilidad <- read.csv("nado_forzado/aumento_inmovilidad.csv")
+
+aumento_inmovilidad <- aumento_inmovilidad |>
+  group_by(Condicion) %>%
+  dplyr::summarise(
+    N_inmobilidad  = sum(!is.na(Aumento_inmovilidad)),
+    media_inmobilidad = mean(Aumento_inmovilidad, na.rm=TRUE),
+    sd_inmobilidad = sd(Aumento_inmovilidad, na.rm=TRUE),
+    se_inmobilidad = sd_inmobilidad / sqrt(N_inmobilidad)
+  )
+
+
+
+ggplot(aumento_inmovilidad, 
+         aes(x = Condicion, y = media_inmobilidad, group = Condicion, colour = Condicion )) +
+    geom_point(aes(colour = Condicion), alpha = 1, size = 4) +
+    geom_line(aes(group = Condicion)) +
+    scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+    geom_errorbar(aes(ymin = media_inmobilidad - se_inmobilidad, ymax = media_inmobilidad + se_inmobilidad), width = .1, size = 1) +
+    labs(
+      title = "Aumento Inmovilidad (de Pre-CUMS a Posr-CUMS)",
+      subtitle = "Fluoxetina Grupo 1",
+      caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n \n Se muestra con SEM",
+      x = "tratamiento",
+      y = "segundos (s)" 
+    ) +
+    theme(
+      plot.margin = unit(c(2,2,2,2), "cm"),
+      panel.background = element_blank(),
+      axis.line = element_line(color = "#1209c8"),
+      axis.title = element_text(size=10, color="black", 
+                                face="bold"),
+      axis.text = element_text(size = 9, color = "black"),
+      axis.text.y = element_text(size=17), 
+      axis.ticks.x = element_blank(),
+      axis.text.x = element_text(margin = margin(t=10)),
+      axis.title.y=element_text(margin = margin(r=10)),
+      legend.position = c(1,1.2),
+      legend.text = element_text(size=10),
+      legend.background = element_rect(color="black")) 
+  
+
+
+```
+
+# Laberinto en Cruz
+
+## Distancia y tiempo en zonas (abierto, cerrado, centro)
+
+```{r}
+datos_crudos <- read.csv("laberinto_cruz/laberinto_cruz_fluox_g1.csv")
+colnames(datos_crudos)
+
+laberinto_cruz_estadisticos <- datos_crudos |>
+  group_by(Treatment, Tratamiento) %>%
+  dplyr::summarise(
+    # Distancia Total
+    N_distancia  = sum(!is.na(Distance)),
+    media_distancia = mean(Distance, na.rm=TRUE),
+    sd_distancia = sd(Distance, na.rm=TRUE),
+    se_distancia = sd_distancia / sqrt(N_distancia),
+    # Tiempo en brazo abierto
+    N_brazo_abierto  = sum(!is.na(Brazo.abierto...time)),
+    media_brazo_abierto = mean(Brazo.abierto...time, na.rm=TRUE),
+    sd_brazo_abierto = sd(Brazo.abierto...time, na.rm=TRUE),
+    se_brazo_abierto = sd_brazo_abierto / sqrt(N_brazo_abierto),
+    # Tiempo en brazo cerrado
+    N_brazo_cerrado  = sum(!is.na(Brazo.cerrado...time)),
+    media_brazo_cerrado = mean(Brazo.cerrado...time, na.rm=TRUE),
+    sd_brazo_cerrado = sd(Brazo.cerrado...time, na.rm=TRUE),
+    se_brazo_cerrado = sd_brazo_cerrado / sqrt(N_brazo_cerrado),
+    # Tiempo en centro
+    N_centro  = sum(!is.na(Centro....time)),
+    media_centro = mean(Centro....time, na.rm=TRUE),
+    sd_centro = sd(Centro....time, na.rm=TRUE),
+    se_centro = sd_centro / sqrt(N_centro),
+  ) 
+
+
+####
+
+# Distancia ----
+distancia <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_distancia, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_distancia - se_distancia, ymax = media_distancia + se_distancia), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Distancia recorrida en Campo Abierto",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox]",
+    x = "Tratamiento",
+    y = "Distancia (m)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 10, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) 
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+
+# Brazo Cerrado ----
+
+brazo_cerrado <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_brazo_cerrado, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_brazo_cerrado - se_brazo_cerrado, ymax = media_brazo_cerrado+ se_brazo_cerrado), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Brazo Cerrado",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox]",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 10, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) 
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+
+
+# Brazo abierto ----   
+
+brazo_abierto <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_brazo_abierto, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_brazo_abierto - se_brazo_abierto, ymax = media_brazo_abierto + se_brazo_abierto), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Brazos Abiertos",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox]",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 10, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) 
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+
+
+# Centro ----  
+centro <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_centro, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_centro - se_centro, ymax = media_centro + se_centro), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Centro",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox]",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 10, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=10),
+    legend.background = element_rect(color="black")) 
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+ 
+
+
+```
+
+### Multiplots
+
+#### Distancia
+
+```{r}
+multiplot(distancia)
+```
+
+
+#### Tiempo en zonas
+
+```{r}
+multiplot(brazo_abierto, centro, brazo_cerrado, cols = 2)
+```
+
+
+# Campo Abierto
+
+## Variables de interés
+
+```{r}
+df <- read.csv("campo_abierto/resultados_raw_campo_abierto/resultados_raw_campo_abierto.csv")
+
+df[!complete.cases(df), ] # Ver si tenemos datos con NA
+
+  # Sacar SD, media, etc
+  ## fuente https://www.r-bloggers.com/2014/03/using-r-quickly-calculating-summary-statistics-with-dplyr/:
+
+
+# Estadísticos
+
+laberinto_cruz_estadisticos <- df |>
+  group_by(Treatment, Tratamiento) %>%
+  dplyr::summarise(
+    # Distancia Total
+    N_distancia  = sum(!is.na(Distance)),
+    media_distancia = mean(Distance, na.rm=TRUE),
+    sd_distancia = sd(Distance, na.rm=TRUE),
+    se_distancia = sd_distancia / sqrt(N_distancia),
+    # Tiempo periferia
+    N_tiempo_periferia  = sum(!is.na(Periferia...time)),
+    media_tiempo_periferia = mean(Periferia...time, na.rm=TRUE),
+    sd_tiempo_periferia = sd(Periferia...time, na.rm=TRUE),
+    se_tiempo_periferia = sd_tiempo_periferia / sqrt(N_tiempo_periferia),
+    # Tiempo medio
+    N_tiempo_medio  = sum(!is.na(Medio...time)),
+    media_tiempo_medio = mean(Medio...time, na.rm=TRUE),
+    sd_tiempo_medio = sd(Medio...time, na.rm=TRUE),
+    se_tiempo_medio = sd_tiempo_medio / sqrt(N_tiempo_medio),
+    # Tiempo en centro
+    N_tiempo_centro  = sum(!is.na(Centro...time)),
+    media_tiempo_centro = mean(Centro...time, na.rm=TRUE),
+    sd_tiempo_centro = sd(Centro...time, na.rm=TRUE),
+    se_tiempo_centro = sd_tiempo_centro / sqrt(N_tiempo_centro),
+    # Número de cruces
+    N_cruces_al_centro  = sum(!is.na(Centro...Number.line.crossings)),
+    media_cruces_al_centro = mean(Centro...Number.line.crossings, na.rm=TRUE),
+    sd_cruces_al_centro = sd(Centro...Number.line.crossings, na.rm=TRUE),
+    se_cruces_al_centro = sd_cruces_al_centro / sqrt(N_cruces_al_centro),
+    # Tiempo en movimiento
+    N_tiempo_en_movimiento = sum(!is.na(Time.mobile)), 
+    media_tiempo_en_movimiento = mean(Time.mobile, na.rm=TRUE), 
+    sd_tiempo_en_movimiento = sd(Time.mobile, na.rm=TRUE), 
+    se_tiempo_en_movimiento = sd_tiempo_en_movimiento/sqrt(N_tiempo_en_movimiento),
+    # Velocidad promedio
+    N_velocidad_promedio = sum(!is.na(Mean.speed)), 
+    media_velocidad_promedio = mean(Mean.speed, na.rm=TRUE), 
+    sd_velocidad_promedio = sd(Mean.speed, na.rm=TRUE), 
+    se_velocidad_promedio = sd_velocidad_promedio/sqrt(N_velocidad_promedio)
+  )
+
+
+
+### distancia ----
+
+distancia <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_distancia, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_distancia - se_distancia, ymax = media_distancia + se_distancia), width = .1, size = 1) +
+  scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+  #  Labelling as desired
+  labs(
+    title = "Distancia Total recorrida",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Distancia (m)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+
+# + geom_signif(comparisons = list(c('pre-cums', 'postcums')), map_signif_level = TRUE)
+
+
+
+### tiempo en movimiento media_tiempo_en_movimiento  ----
+
+tiempo_movimiento <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_tiempo_en_movimiento, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_tiempo_en_movimiento - se_tiempo_en_movimiento, ymax = media_tiempo_en_movimiento + se_tiempo_en_movimiento), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Movimiento",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Tiempo de movilidad (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(2,2,2,2), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.7, 1.2),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))+
+
+### latencia_primera_inmovilidad ------
+
+latencia_inmovilidad <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_latencia_primera_inmovilidad, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_latencia_primera_inmovilidad - se_latencia_primera_inmovilidad, ymax = media_latencia_primera_inmovilidad + se_latencia_primera_inmovilidad), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Latencia a primera inmovilidad",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox]",
+    x = "Tratamiento",
+    y = "Latencia a inmovilidad (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+
+### velocidad_promedio -----
+
+velocidad <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_velocidad_promedio, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_velocidad_promedio - se_velocidad_promedio, ymax = media_velocidad_promedio + se_velocidad_promedio), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Velocidad promedio",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Velocidad (m/s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+
+### tiempo_periferia -------
+
+tiempo_periferia <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_tiempo_periferia, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_tiempo_periferia - se_tiempo_periferia, ymax = media_tiempo_periferia + se_tiempo_periferia), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en periferia",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 1.13),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+ 
+# tiempo_medio
+
+
+tiempo_medio <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_tiempo_medio, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_tiempo_medio - se_tiempo_medio, ymax = media_tiempo_medio + se_tiempo_medio), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Medio",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+
+### tiempo_centro -------
+
+
+tiempo_centro <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_tiempo_centro, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_tiempo_centro - se_tiempo_centro, ymax = media_tiempo_centro + se_tiempo_centro), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Tiempo en Centro",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Tiempo (s)"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 1.12),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+
+### cruces_al_centro --------
+
+
+cruces_centro <- ggplot(data = laberinto_cruz_estadisticos, aes(x = reorder(Treatment, desc(Treatment)), y = media_cruces_al_centro, group = Tratamiento,colour = Tratamiento)) +
+  geom_line(aes(colour = Tratamiento), alpha = 1, size = 2) +
+  geom_point(aes(colour = Tratamiento), alpha = 1, size = 4) +
+  scale_color_manual(values = c("#ff1493", "#4c00ff")) +
+  geom_errorbar(aes(ymin = media_cruces_al_centro - se_cruces_al_centro, ymax = media_cruces_al_centro + se_cruces_al_centro), width = .1, size = 1) +
+  #  Labelling as desired
+  labs(
+    title = "Cruces al centro",
+    subtitle = "Fluoxetina Grupo 1",
+    caption = "n = 7  [CUMS_ctrl] y n = 8 [CUMS_fluox] \n SEM",
+    x = "Tratamiento",
+    y = "Número de Cruces"
+  ) +
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 1.13),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")) 
+#   + scale_y_continuous(expand = expansion(0), limits = c(30, 70), breaks = seq(30,70,5))
+
+
+
+```
+
+
+## Multiplot
+
+### distancia, velocidad, tiempo en movimiento
+```{r}
+multiplot(distancia,velocidad,tiempo_movimiento, cols = 2)
+```
+
+### timepo en zonas
+
+```{r}
+multiplot(tiempo_periferia, tiempo_medio, tiempo_centro, cruces_centro, cols = 2)
+```
+

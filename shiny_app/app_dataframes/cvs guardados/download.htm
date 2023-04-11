@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.7.4];shiny-javascript[1.7.4];font-awesome[6.2.0];bootstrap[3.4.1]</script>
+<script src="jquery-3.6.0/jquery.min.js"></script>
+<link href="shiny-css-1.7.4/shiny.min.css" rel="stylesheet" />
+<script src="shiny-javascript-1.7.4/shiny.min.js"></script>
+<link href="font-awesome-6.2.0/css/all.min.css" rel="stylesheet" />
+<link href="font-awesome-6.2.0/css/v4-shims.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
+<script src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>  <title>Data Analysis</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Data Analysis</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well" role="complementary">
+          <div class="form-group shiny-input-container">
+            <label class="control-label" id="file-label" for="file">Choose CSV file</label>
+            <div class="input-group">
+              <label class="input-group-btn input-group-prepend">
+                <span class="btn btn-default btn-file">
+                  Browse...
+                  <input id="file" name="file" type="file" style="position: absolute !important; top: -99999px !important; left: -99999px !important;" accept=".csv"/>
+                </span>
+              </label>
+              <input type="text" class="form-control" placeholder="No file selected" readonly="readonly"/>
+            </div>
+            <div id="file_progress" class="progress active shiny-file-input-progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <hr/>
+        </form>
+      </div>
+      <div class="col-sm-8" role="main">
+        <div class="tabbable">
+          <ul class="nav nav-tabs shiny-tab-input" id="main_tab" data-tabsetid="8045">
+            <li class="active">
+              <a href="#tab-8045-1" data-toggle="tab" data-bs-toggle="tab" data-value="Entrneamientos Latencias">Entrneamientos Latencias</a>
+            </li>
+            <li>
+              <a href="#tab-8045-2" data-toggle="tab" data-bs-toggle="tab" data-value="Entrenamientos Distancia">Entrenamientos Distancia</a>
+            </li>
+            <li>
+              <a href="#tab-8045-3" data-toggle="tab" data-bs-toggle="tab" data-value="Entrenamientos Velocidad">Entrenamientos Velocidad</a>
+            </li>
+            <li>
+              <a href="#tab-8045-4" data-toggle="tab" data-bs-toggle="tab" data-value="Pruebas Porcentaje Cuadrante Blanco">Pruebas Porcentaje Cuadrante Blanco</a>
+            </li>
+            <li>
+              <a href="#tab-8045-5" data-toggle="tab" data-bs-toggle="tab" data-value="Pruebas Numero Cruces Cuadrante Blanco">Pruebas Numero Cruces Cuadrante Blanco</a>
+            </li>
+            <li>
+              <a href="#tab-8045-6" data-toggle="tab" data-bs-toggle="tab" data-value="Pruebas Distancia Promedio Blanco">Pruebas Distancia Promedio Blanco</a>
+            </li>
+            <li>
+              <a href="#tab-8045-7" data-toggle="tab" data-bs-toggle="tab" data-value="Pruebas Distancia Promedio Antiguo">Pruebas Distancia Promedio Antiguo</a>
+            </li>
+          </ul>
+          <div class="tab-content" data-tabsetid="8045">
+            <div class="tab-pane active" data-value="Entrneamientos Latencias" id="tab-8045-1">
+              <div class="shiny-plot-output html-fill-item" id="entr_lat_plot" style="width:100%;height:400px;"></div>
+              <a id="entr_lat_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="entr_lat_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="entr_lat_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Entrenamientos Distancia" id="tab-8045-2">
+              <div class="shiny-plot-output html-fill-item" id="entr_dist_plot" style="width:100%;height:400px;"></div>
+              <a id="entr_dist_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="entr_dist_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="entr_dist_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Entrenamientos Velocidad" id="tab-8045-3">
+              <div class="shiny-plot-output html-fill-item" id="entr_vel_plot" style="width:100%;height:400px;"></div>
+              <a id="entr_vel_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="entr_vel_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="entr_vel_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Pruebas Porcentaje Cuadrante Blanco" id="tab-8045-4">
+              <div class="shiny-plot-output html-fill-item" id="pruebas_pct_plot" style="width:100%;height:400px;"></div>
+              <a id="pruebas_pct_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="pruebas_pct_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="pruebas_pct_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Pruebas Numero Cruces Cuadrante Blanco" id="tab-8045-5">
+              <div class="shiny-plot-output html-fill-item" id="pruebas_num_plot" style="width:100%;height:400px;"></div>
+              <a id="pruebas_num_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="pruebas_num_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="pruebas_num_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Pruebas Distancia Promedio Blanco" id="tab-8045-6">
+              <div class="shiny-plot-output html-fill-item" id="pruebas_dist_blanco_plot" style="width:100%;height:400px;"></div>
+              <a id="pruebas_dist_blanco_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="pruebas_dist_blanco_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="pruebas_dist_blanco_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+            <div class="tab-pane" data-value="Pruebas Distancia Promedio Antiguo" id="tab-8045-7">
+              <div class="shiny-plot-output html-fill-item" id="pruebas_dist_antiguo_plot" style="width:100%;height:400px;"></div>
+              <a id="pruebas_dist_antiguo_csv" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download CSV
+              </a>
+              <a id="pruebas_dist_antiguo_xlsx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download XLSX
+              </a>
+              <a id="pruebas_dist_antiguo_pzfx" class="btn btn-default shiny-download-link " href="" target="_blank" download>
+                <i class="fas fa-download" role="presentation" aria-label="download icon"></i>
+                Download PZFX
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

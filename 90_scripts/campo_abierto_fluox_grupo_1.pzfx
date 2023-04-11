@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GraphPadPrismFile PrismXMLVersion="5.00">
+  <Created>
+    <OriginalVersion CreatedByProgram="GraphPad Prism" CreatedByVersion="6.0f.254" Login="" DateTime="2023-02-08T06:05:43+00:00"/>
+  </Created>
+  <InfoSequence>
+    <Ref ID="Info0" Selected="1"/>
+  </InfoSequence>
+  <Info ID="Info0">
+    <Title>Project info 1</Title>
+    <Notes></Notes>
+    <Constant>
+      <Name>Experiment Date</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Experiment ID</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Notebook ID</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Project</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Experimenter</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Protocol</Name>
+      <Value></Value>
+    </Constant>
+  </Info>
+  <TableSequence>
+    <Ref ID="Table0" Selected="1"/>
+  </TableSequence>
+  <Table ID="Table0" XFormat="none" TableType="OneWay" EVFormat="AsteriskAfterNumber">
+    <Title>Data 1</Title>
+    <RowTitlesColumn Width="39">
+      <Subcolumn>
+        <d>1</d>
+      </Subcolumn>
+    </RowTitlesColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_distancia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>50.2248571428571</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_distancia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>38.01075</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_distancia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>61.742</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_distancia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>60.834625</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_distancia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>11.5324204951168</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_distancia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>10.6190175863872</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_distancia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>8.50834180868008</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_distancia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>9.1950392827173</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_distancia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_distancia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_distancia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_distancia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_distancia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>4.35884523495764</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_distancia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>3.75438967243679</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_distancia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>3.21585092790014</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_distancia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>3.25093731504305</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_en_movimiento_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>171.242857142857</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_en_movimiento_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>238.9375</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_en_movimiento_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>123.857142857143</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_en_movimiento_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>98.2</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_en_movimiento_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>61.1737649961936</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_en_movimiento_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>69.3198577506578</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_en_movimiento_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>49.4080242181658</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_en_movimiento_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>41.0598169921466</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_en_movimiento_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_en_movimiento_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_en_movimiento_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_en_movimiento_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_en_movimiento_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>23.1215098487766</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_en_movimiento_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>24.5082707431885</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_en_movimiento_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>18.6744778360462</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_en_movimiento_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>14.5168375147127</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_latencia_primera_inmovilidad_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>19.9714285714286</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_latencia_primera_inmovilidad_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>28.7625</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_latencia_primera_inmovilidad_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>57.4</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_latencia_primera_inmovilidad_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>56.2</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_latencia_primera_inmovilidad_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>17.3188446771827</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_latencia_primera_inmovilidad_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>25.6508945820052</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_latencia_primera_inmovilidad_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>25.4634378406897</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_latencia_primera_inmovilidad_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>44.8417216440225</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_latencia_primera_inmovilidad_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_latencia_primera_inmovilidad_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_latencia_primera_inmovilidad_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_latencia_primera_inmovilidad_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_latencia_primera_inmovilidad_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>6.54590800154003</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_latencia_primera_inmovilidad_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>9.06896075121857</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_latencia_primera_inmovilidad_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>9.62427486445949</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_latencia_primera_inmovilidad_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>15.853942727284</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_velocidad_promedio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>0.0835714285714286</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_velocidad_promedio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>0.063375</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_velocidad_promedio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>0.102857142857143</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_velocidad_promedio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>0.1015</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_velocidad_promedio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>0.0192947068981551</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_velocidad_promedio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>0.0177598061443732</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_velocidad_promedio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>0.0142411208761643</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_velocidad_promedio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>0.0152596573636875</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_velocidad_promedio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_velocidad_promedio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_velocidad_promedio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_velocidad_promedio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_velocidad_promedio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>0.0072927137246287</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_velocidad_promedio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>0.00627903967862238</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_velocidad_promedio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>0.00538263774702016</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_velocidad_promedio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>0.00539510360022334</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_periferia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>529.414285714286</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_periferia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>554.8125</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_periferia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>532.485714285714</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_periferia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>516.3625</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_periferia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>37.349182435114</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_periferia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>22.7821005867075</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_periferia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>31.656301561797</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_periferia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>36.9502730513785</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_periferia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_periferia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_periferia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_periferia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_periferia_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>14.1166640564133</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_periferia_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8.05468890726744</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_periferia_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>11.9649573372258</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_periferia_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>13.0638943206621</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_medio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>36.9285714285714</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_medio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>23.4875</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_medio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>45.0142857142857</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_medio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>61.075</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_medio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>26.3133498618549</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_medio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>12.4126016036699</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_medio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>24.3916261977636</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_medio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>28.5563478056981</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_medio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_medio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_medio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_medio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_medio_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>9.94551141364342</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_medio_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>4.388517383061</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_medio_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>9.21916814167579</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_medio_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>10.0961935896654</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7.54285714285714</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>3.7125</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>6.1</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_tiempo_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>6.5125</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>3.98951005465464</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>3.08333655083487</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>4.12553026894725</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_tiempo_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>3.75782516889756</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_tiempo_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>1.50789306537255</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>1.09012409188784</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>1.55930387398626</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_tiempo_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>1.32859182972048</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_cruces_al_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>5</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_cruces_al_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>2.625</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_cruces_al_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>5.57142857142857</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>media_cruces_al_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>5.125</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_cruces_al_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>4.65474668125631</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_cruces_al_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>2.55999441963678</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_cruces_al_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>3.50509832753866</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_cruces_al_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>2.16712449375401</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_cruces_al_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_cruces_al_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_cruces_al_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>7</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>n_cruces_al_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>8</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_cruces_al_centro_CUMS_ctrl_postcums</Title>
+      <Subcolumn>
+        <d>1.75932887637249</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_cruces_al_centro_CUMS_fluox_postcums</Title>
+      <Subcolumn>
+        <d>0.905094706962442</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_cruces_al_centro_CUMS_ctrl_pre-cums</Title>
+      <Subcolumn>
+        <d>1.32480264221367</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_cruces_al_centro_CUMS_fluox_pre-cums</Title>
+      <Subcolumn>
+        <d>0.766194212604462</d>
+      </Subcolumn>
+    </YColumn>
+  </Table>
+</GraphPadPrismFile>

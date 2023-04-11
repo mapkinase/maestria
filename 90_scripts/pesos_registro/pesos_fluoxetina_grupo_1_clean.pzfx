@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GraphPadPrismFile PrismXMLVersion="5.00">
+  <Created>
+    <OriginalVersion CreatedByProgram="GraphPad Prism" CreatedByVersion="6.0f.254" Login="" DateTime="2023-02-08T05:09:23+00:00"/>
+  </Created>
+  <InfoSequence>
+    <Ref ID="Info0" Selected="1"/>
+  </InfoSequence>
+  <Info ID="Info0">
+    <Title>Project info 1</Title>
+    <Notes></Notes>
+    <Constant>
+      <Name>Experiment Date</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Experiment ID</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Notebook ID</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Project</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Experimenter</Name>
+      <Value></Value>
+    </Constant>
+    <Constant>
+      <Name>Protocol</Name>
+      <Value></Value>
+    </Constant>
+  </Info>
+  <TableSequence>
+    <Ref ID="Table0" Selected="1"/>
+  </TableSequence>
+  <Table ID="Table0" XFormat="none" TableType="OneWay" EVFormat="AsteriskAfterNumber">
+    <Title>Data 1</Title>
+    <RowTitlesColumn Width="39">
+      <Subcolumn>
+        <d>1</d>
+        <d>2</d>
+        <d>3</d>
+        <d>4</d>
+        <d>5</d>
+      </Subcolumn>
+    </RowTitlesColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>semana</Title>
+      <Subcolumn>
+        <d>1</d>
+        <d>2</d>
+        <d>3</d>
+        <d>4</d>
+        <d>5</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>mean_CUMS_ctrl_Hembra</Title>
+      <Subcolumn>
+        <d>23.5</d>
+        <d>24.05</d>
+        <d>24.325</d>
+        <d>24.6</d>
+        <d>25.175</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>mean_CUMS_ctrl_Macho</Title>
+      <Subcolumn>
+        <d>30.3333333333333</d>
+        <d>31.4333333333333</d>
+        <d>31.9666666666667</d>
+        <d>32.6666666666667</d>
+        <d>32.9</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>mean_CUMS_Fluox_Hembra</Title>
+      <Subcolumn>
+        <d>24.5</d>
+        <d>24.775</d>
+        <d>25.675</d>
+        <d>24.9</d>
+        <d>25.75</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>mean_CUMS_Fluox_Macho</Title>
+      <Subcolumn>
+        <d>30.25</d>
+        <d>31</d>
+        <d>31.875</d>
+        <d>32.125</d>
+        <d>32.4</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>N_CUMS_ctrl_Hembra</Title>
+      <Subcolumn>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>N_CUMS_ctrl_Macho</Title>
+      <Subcolumn>
+        <d>3</d>
+        <d>3</d>
+        <d>3</d>
+        <d>3</d>
+        <d>3</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>N_CUMS_Fluox_Hembra</Title>
+      <Subcolumn>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>N_CUMS_Fluox_Macho</Title>
+      <Subcolumn>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+        <d>4</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_CUMS_ctrl_Hembra</Title>
+      <Subcolumn>
+        <d>2.08166599946613</d>
+        <d>2.06801031589948</d>
+        <d>2.13131414859471</d>
+        <d>2.13697605664328</d>
+        <d>1.85180092522567</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_CUMS_ctrl_Macho</Title>
+      <Subcolumn>
+        <d>2.51661147842358</d>
+        <d>2.01328918273886</d>
+        <d>2.37977589981354</d>
+        <d>2.50266524595946</d>
+        <d>2.4062418831032</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_CUMS_Fluox_Hembra</Title>
+      <Subcolumn>
+        <d>2.08166599946613</d>
+        <d>2.32576152403179</d>
+        <d>1.66808273176123</d>
+        <d>1.73973178009332</d>
+        <d>2.20680764907139</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>sd_CUMS_Fluox_Macho</Title>
+      <Subcolumn>
+        <d>1.70782512765993</d>
+        <d>0.804155872120987</d>
+        <d>0.767571929311299</d>
+        <d>0.99121138007995</d>
+        <d>0.905538513813743</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_CUMS_ctrl_Hembra</Title>
+      <Subcolumn>
+        <d>1.04083299973307</d>
+        <d>1.03400515794974</d>
+        <d>1.06565707429736</d>
+        <d>1.06848802832164</d>
+        <d>0.925900462612837</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_CUMS_ctrl_Macho</Title>
+      <Subcolumn>
+        <d>1.45296631451356</d>
+        <d>1.16237305161085</d>
+        <d>1.37396425636833</d>
+        <d>1.44491445344622</d>
+        <d>1.38924439894498</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_CUMS_Fluox_Hembra</Title>
+      <Subcolumn>
+        <d>1.04083299973307</d>
+        <d>1.16288076201589</d>
+        <d>0.834041365880614</d>
+        <d>0.869865890046659</d>
+        <d>1.1034038245357</d>
+      </Subcolumn>
+    </YColumn>
+    <YColumn Width="89" Decimals="0" Subcolumns="1">
+      <Title>se_CUMS_Fluox_Macho</Title>
+      <Subcolumn>
+        <d>0.853912563829966</d>
+        <d>0.402077936060494</d>
+        <d>0.38378596465565</d>
+        <d>0.495605690039975</d>
+        <d>0.452769256906871</d>
+      </Subcolumn>
+    </YColumn>
+  </Table>
+</GraphPadPrismFile>

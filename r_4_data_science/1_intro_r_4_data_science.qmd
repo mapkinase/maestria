@@ -1,0 +1,468 @@
+---
+title: "R_for_data_science_intro"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+# Tidyverse
+
+## Uso e instalación básica
+
+```{r}
+install.packages("tidyverse")
+
+```
+
+## update
+
+``` {tidyverse_update(){r}
+tidyverse_update()
+```
+
+# Otros Paquetes
+
+```{r}
+install.packages(c("babynames", "gapminder", "nycflights13", "palmerpenguins"))
+```
+
+# Dataframe - Penguins
+
+```{r}
+palmerpenguins::penguins
+```
+
+## glimpse () - see all variables and the first few observations of each variable
+
+```{r}
+glimpse(palmerpenguins::penguins)
+```
+
+## view () - open an interactive data viewer -
+
+```{r}
+view(palmerpenguins::penguins)
+```
+
+# ggplot
+
+Fisrt argument is the data:
+
+```{r}
+penguins <- palmerpenguins::penguins
+
+ggplot(data = penguins)
+```
+
+## Select variables with aes
+
+Next, tell ggplot() the variables from this dataframe to map to visual properties (**aesthetics**)
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm)
+)
+```
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+)
+```
+
+## geom
+
+Next, we need to define a **geom**: *the geometrical object that a plot uses to represent data*. - geom - bar
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point() # adds a layer of points to your plot, which creates a scatterplot
+
+
+  #> Warning: Removed 2 rows containing missing values (`geom_point()`)
+
+```
+
+We're seeing this message because there are two penguins in our dataset with missing body mass and flipper length values and ggplot2 has no way of representing them on the plot.
+
+one way of identifying the observations with NAs for either body mass or flipper length
+
+```{r}
+penguins |>
+  select(species, flipper_length_mm, body_mass_g) |>
+  filter(is.na(body_mass_g) | is.na(flipper_length_mm))
+#> # A tibble: 2 × 3
+#>   species flipper_length_mm body_mass_g
+#>   <fct>               <int>       <int>
+#> 1 Adelie                 NA          NA
+#> 2 Gentoo                 NA          NA
+
+```
+
+## aes and layers
+
+When a variable is mapped to an aesthetic, ggplot2 will automatically assign a unique value of the aesthetic (here a unique color) to each unique level of the variable (each of the three species), a process known as *scaling*
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+) +
+  geom_point()
+```
+
+Now let's add one more layer: a smooth curve displaying the relationship between body mass and flipper length
+
+Since this is a new geometric object representing our data, we will add a new geom: geom_smooth()
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+) +
+  geom_point() +
+  geom_smooth()
+
+```
+
+but this plot doesn't look like the plot from Section 2.2.2, which only has one curve for the entire dataset as opposed to separate curves for each of the penguin species
+
+When aesthetic mappings are defined in ggplot(), at the global level, they're inherited by each of the subsequent geom layers of the plot
+
+However, each geom function in ggplot2 can also take a mapping argument, which allows for aesthetic mappings at the local level
+
+Since we want points to be colored based on species but don't want the smooth curves to be separated out for them, we should specify color = species for geom_point() only
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(mapping = aes(color = species)) +
+  geom_smooth()
+```
+
+We still need to use different shapes for each species of penguins and improve labels
+
+in addition to color, we can also map species to the shape aesthetic.
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(mapping = aes(color = species, shape = species)) +
+  geom_smooth()
+```
+
+finally, we can improve the labels of our plot using the \*labs()\*\* function in a new layer
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point(aes(color = species, shape = species)) +
+  geom_smooth() +
+  labs(
+    title = "Body mass and flipper length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+    x = "Flipper length (mm)",
+    y = "Body mass (g)",
+    color = "Species",
+    shape = "Species"
+  )
+```
+
+# Ejercicio
+
+1.  How many rows are in penguins? How many columns?
+
+```{r}
+glimpse(penguins)
+
+  # rows: 344, columns: 8
+```
+
+2.  What does the bill_depth_mm variable in the penguins data frame describe? Read the help for ?penguins to find out.
+
+```{r}
+?palmerpenguins::penguins
+
+  # a number denoting bill depth (millimeters)
+```
+
+3.  Make a scatterplot of bill_depth_mm vs. bill_length_mm. Describe the relationship between these two variables.
+
+```{r}
+ggplot(penguins,
+       aes( x= bill_depth_mm,
+            y= bill_length_mm)) +
+  geom_point(
+    aes(
+      color = species
+    )
+  )
+```
+
+4.  What happens if you make a scatterplot of species vs. bill_depth_mm? Why is the plot not useful?
+
+```{r}
+ggplot(penguins,
+       aes( x= species,
+            y= bill_depth_mm)) +
+  geom_point(
+    aes(
+      color = species
+    )
+  )
+```
+
+5.  Why does the following give an error and how would you fix it?
+
+```{r}
+ggplot(data = penguins) + 
+  geom_point()
+
+  # `geom_point()` requires the following missing aesthetics: x and y
+```
+
+6.  What does the *na.rm* argument do in geom_point()? What is the default value of the argument? Create a scatterplot where you successfully use this argument set to TRUE.
+
+```{r}
+ggplot(penguins,
+       aes( x= bill_depth_mm,
+            y= bill_length_mm)) +
+  geom_point(
+    aes(
+      color = species
+    ),
+    na.rm = TRUE
+  )
+```
+
+7.  Add the following caption to the plot you made in the previous exercise: "Data come from the palmerpenguins package." Hint: Take a look at the documentation for labs().
+
+```{r}
+ggplot(penguins,
+       aes( x= bill_depth_mm,
+            y= bill_length_mm)) +
+  geom_point(
+    aes(
+      color = species
+    ) +
+      
+  )
+  
+```
+
+8.  Recreate the following visualization. What aesthetic should bill_depth_mm be mapped to? And should it be mapped at the global level or at the geom level?
+
+```{r}
+ggplot(penguins,aes(x= flipper_length_mm,y= body_mass_g)) +
+  geom_point(aes(color = bill_depth_mm)) +
+  geom_smooth()
+
+  
+```
+
+9.  Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions.
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g, color = island)
+) +
+  geom_point() +
+  geom_smooth(se = FALSE)
+```
+
+10. Will these two graphs look different? Why/why not?
+
+```{r}
+ggplot(
+  data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)
+) +
+  geom_point() +
+  geom_smooth()
+
+ggplot() +
+  geom_point(
+    data = penguins,
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+  ) +
+  geom_smooth(
+    data = penguins,
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+  )
+```
+
+# Visualizing distributions
+
+How you visualize the distribution of a variable depends on the type of variable: categorical or numerical.
+
+## categorical variable
+
+A variable is categorical if it can only take one of a small set of values To examine the distribution of a categorical variable, you can use a \*bar chart\*\*
+
+```{r}
+ggplot(penguins, aes(x = species)) +
+  geom_bar()
+```
+
+In bar plots of categorical variables with non-ordered levels, like the penguin species above, it's often preferable to reorder the bars based on their frequencies (how R handles categorical data) and then reordering the levels of that factor
+
+```{r}
+ggplot(penguins, aes(x = fct_infreq(species))) +
+  geom_bar()
+```
+
+## numerical variable
+
+A variable is numerical if it can take any of an infinite set of ordered values
+
+Numbers and date-times are two examples of continuous variables
+
+To visualize the distribution of a continuous variable, you can use a *histogram* or a *density plot*
+
+A histogram divides the x-axis into equally spaced bins and then uses the height of a bar to display the number of observations that fall in each bin.
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 200)
+```
+
+In the graph above, the tallest bar shows that 39 observations have a body_mass_g value between 3,500 and 3,700 grams, which are the left and right edges of the bar.
+
+```{r}
+penguins |>
+  count(cut_width(body_mass_g, 200))
+```
+
+You can set the width of the intervals in a histogram with the *binwidth* argument, which is measured in the units of the x variable
+
+You should always explore a variety of binwidths when working with histograms, as different binwidths can reveal different patterns
+
+In the plots below a binwidth of 20 is too narrow, resulting in too many bars, making it difficult to determine the shape of the distribution.
+
+a binwidth of 2,000 is too high, resulting in all data being binned into only three bars, and also making it difficult to determine the shape of the distribution.
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 20)
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 200)
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_histogram(binwidth = 2000)
+```
+
+*density plot*
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g)) +
+  geom_density()
+```
+
+## Exercises
+
+1.  Make a bar plot of species of penguins, where you assign species to the y aesthetic. How is this plot different?
+
+```{r}
+ggplot(penguins, aes( x = species)) + 
+  geom_bar()
+
+ggplot(penguins, aes(y = species)) +
+  geom_bar()
+```
+
+2.  How are the following two plots different? Which aesthetic, color or fill, is more useful for changing the color of bars?
+
+```{r}
+    ggplot(penguins, aes(x = species)) +
+      geom_bar(color = "red")
+
+    ggplot(penguins, aes(x = species)) +
+      geom_bar(fill = "red")
+```
+
+3.  What does the bins argument in geom_histogram() do?
+
+4.  Make a histogram of the carat variable in the diamonds dataset. Experiment with different binwidths. What binwidth reveals the most interesting patterns?
+
+# Visualizing relationships
+
+To visualize a relationship we need to have at least two variables mapped to aesthetics of a plot.
+
+## A numerical and a categorical variable
+
+we can use side-by-side \*box plots\*\*.
+
+A boxplot is a type of visual shorthand for a distribution of values that is popular among statisticians
+
+each boxplot consists of:
+
+-   A box that stretches from the 25th percentile of the distribution to the 75th percentile, a distance known as the interquartile range (IQR)
+
+-   In the middle of the box is a line that displays the median, i.e. 50th percentile, of the distribution
+
+-   These three lines give you a sense of the spread of the distribution and whether or not the distribution is symmetric about the median or skewed to one side.
+
+-   Visual points that display observations that fall more than 1.5 times the IQR from either edge of the box.
+
+-   A line (or whisker) that extends from each end of the box and goes to the farthest non-outlier point in the distribution.
+
+    ```{r}
+
+    ggplot(penguins, aes(x = species, y = body_mass_g)) +
+      geom_boxplot()
+    ```
+
+    Alternatively, we can make *frequency polygons* with `geom_freqpoly()`.
+
+`geom_freqpoly()` performs the same calculation as `geom_histogram()`, but instead of displaying the counts with bars, it uses lines instead
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g, color = species)) +
+  geom_freqpoly(binwidth = 200, linewidth = 0.75)
+```
+
+We can also use overlaid density plots, with species mapped to both color and fill aesthetics and using the alpha aesthetic to add transparency to the filled density curves
+
+This aesthetic takes values between 0 (completely transparent) and 1 (completely opaque). In the following plot it's set to 0.5.
+
+```{r}
+ggplot(penguins, aes(x = body_mass_g, color = species, fill = species)) +
+  geom_density(alpha = 0.5)
+```
+
+## Two categorical variables
+
+We can use segmented bar plots to visualize the distribution between two categorical variables
+
+In creating this bar chart, we map the variable we want to divide the data into first to the x aesthetic and the variable we then further want to divide each group into to the fill aesthetic

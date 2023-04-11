@@ -1,0 +1,125 @@
+---
+title: "por_definir"
+author: "Santi"
+format: html
+editor: visual
+---
+
+# Leer archivo
+
+```{r}
+df <- read.csv("carpeta/nombre_de_archivo.csv", header = TRUE)
+
+head(df) # explorar archivo
+```
+
+# Formato para graficar
+
+| Tratamiento | Variable(s) categóricas | Media (variable x) | SD (variable x) | n (n de animales) | SE (variable x) | ymin | ymax |
+|-------------|-------------------------|--------------------|-----------------|-------------------|-----------------|------|------|
+| Control     | cuadrante_norte         |                    |                 |                   |                 |      |      |
+| Ketamina    | cuadrante_sur           |                    |                 |                   |                 |      |      |
+| Fluoxetina  | cuadrante_sur           |                    |                 |                   |                 |      |      |
+
+: Formato para graficar
+
+# Gráfico de barras con errores
+
+Esta parte genera un template donde:
+
+-   En eje de X los tratamientos en columnas separadas
+
+-   En eje Y la variable numérica
+
+```{r}
+df %>%
+  ggplot(aes(x=Tratamiento,
+             y=mean_entradas,
+             fill=Coordenada_zona,
+             ymin=ymin,
+             ymax=ymax))
+```
+
+Ahora agregamos las columnas con:
+
+```{r}
+  geom_col(width = .5, position = position_dodge(.6),
+           color = 'black')
+```
+
+Barra de errores con:
+
+```{r}
+  geom_errorbar(width=.1,position = position_dodge(.6))
+```
+
+Colores con:
+
+```{r}
+scale_fill_manual(values=c('#a60df3', '#0ef4ea', 'Black', 'red'))
+```
+
+Escala con:
+
+```{r}
+  scale_y_continuous(expand = expansion(0), 
+                     limits = c(0,8), 
+                     breaks = seq(0, 8,1)
+```
+
+Título de ejes y gráfico:
+
+```{r}
+  labs(
+    x = 'Tratamiento',
+    y = 'Número de cruces',
+    title= 'Prueba 1'
+  )
+```
+
+Últimos retoques de tema:
+
+```{r}
+theme(
+plot.margin = unit(c(1,1,1,1), "cm"),
+panel.background = element_blank(),
+axis.line = element_line(color = "#1209c8"),
+axis.title = element_text(size=22, color="black", 
+                          face="bold"),
+axis.text = element_text(size = 22, color = "black"),
+axis.text.y = element_text(size=17), 
+axis.ticks.x = element_blank(),
+axis.text.x = element_text(margin = margin(t=10)),
+axis.title.y=element_text(margin = margin(r=10)),
+legend.position = c(.8, 0.9),
+legend.text = element_text(size=20),
+legend.background = element_rect(color="black")
+) + theme(axis.line = element_line(colour = "orchid",
+linetype = "solid"), legend.title = element_text(colour = "white"),
+panel.background = element_rect(fill = NA)) + theme(plot.title = element_text(size = 24,
+face = "bold.italic", colour = "gray19",
+hjust = 0.1, vjust = 1))
+```
+
+o usamos:
+
+```{r}
+  theme(
+    plot.margin = unit(c(1,1,1,1), "cm"),
+    panel.background = element_blank(),
+    axis.line = element_line(color = "#1209c8"),
+    axis.title = element_text(size=22, color="black", 
+                              face="bold"),
+    axis.text = element_text(size = 22, color = "black"),
+    axis.text.y = element_text(size=17), 
+    axis.ticks.x = element_blank(),
+    axis.text.x = element_text(margin = margin(t=10)),
+    axis.title.y=element_text(margin = margin(r=10)),
+    legend.position = c(.8, 0.9),
+    legend.text = element_text(size=20),
+    legend.background = element_rect(color="black")
+  ) + theme(axis.line = element_line(linetype = "solid"),
+    plot.title = element_text(size = 20),
+    legend.title = element_text(size = 12,
+        colour = NA), panel.background = element_rect(fill = NA)) +labs(title = "Prueba 2"
+```

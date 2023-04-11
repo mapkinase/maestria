@@ -1,0 +1,80 @@
+---
+title: "experimentos gráficos Fluoxetina Grupo 1"
+format: docx
+---
+
+# Water Maze
+
+## Entrenamientos
+
+### Latencias, Distancias y velocidad en pruebas
+
+![Latencia, distancia y velocidad en entrenamientos](water_maze/latencia_distancia_velocidad.png){width="3000"}
+
+### Eficiencia a annulus
+
+![Eficiencias en entrenaimentos de Water Maze](water_maze/eficiencias_recortado.png)
+
+# Pruebas
+
+## Porcentaje en cuadrantes
+
+### 
+
+![](water_maze/porcentaje_cuadrantes_y_numero_cruces.png)
+
+-   [ ] PENDIENTE: hacer una sola gráfica (de barras tal vez?) para comparar más fácil el porcentaje de ocupación (blanco vs opuestos)
+
+-   [ ] PENDIENTE: comparar número de cruces blanco contra número de cruces antiguo en prueba reversa
+
+-   Los porcentajes opuestos se obtuvieron promediando el porcentaje de los 3 cuadrantes `media(tiempo cuadrante 1 + tiempo cuadrante 2 + tiempo cuadrante 3) -> porcentaje`
+
+## Entropía y distancia promedio a annulus
+
+![](water_maze/entropia_distancia_promedio.png)
+
+-   [ ] PENDIENTE: Revisar datos de entropía; verificar que coordenadas estén bien el código
+
+# Nado Forzado
+
+## Tiempo de inmovilidad
+
+![](nado_forzado/tiempo_inmobilidad.png)
+
+-   [ ] PENDIENTE: hacer conteos manual para comparar con mediciones de Any maze. Probablemente haya mucho error en estas gráficas porque no se comprobó manualmente si las mediciones de inmovilidad están bien en el programa.
+
+## Aumento de inmovilidad
+
+![](images/image-573537361.png)
+
+-   [ ] PENDIENTE: hacer conteos manual para comparar con mediciones de Any maze. Probablemente haya mucho error en estas gráficas porque no se comprobó manualmente si las mediciones de inmovilidad están bien en el programa.
+
+# Laberinto en Cruz
+
+## Distancia recorrida en la prueba
+
+![](images/image-1863948583.png)
+
+## Tiempo en zonas
+
+![](laberinto_cruz/tiempo_en_zonas.png)
+
+# Campo Abierto
+
+## Distancia, tiempo en movimiento, velocidad promedio
+
+![](laberinto_cruz/distancia_tiempoMov_velocidad.png)
+
+## Tiempo en zonas
+
+![](laberinto_cruz/tiempo_en_zonas_v2.png)
+
+# Pendientes
+
+-   Estadística
+
+-   Subir archivos de PRISM
+
+-   Mapas de calor
+
+-   Mediciones extras de ansiedad en OF, EPM, FST
