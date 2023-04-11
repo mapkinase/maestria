@@ -94,11 +94,15 @@ server <- function(input, output) {
         sd_cipl_SO = sd(Annulus.SW...CIPL, na.rm=TRUE),
         se_cipl_SO = sd_cipl_SO / sqrt(N_cipl_SO))
     
-    cipl_NE_plot <- ggplot(data = entrenamientos_estadisticos, aes(x = Stage, y = media_cipl_NE, colour = Treatment)) +
+    cipl_NE_plot <- ggplot(data = entrenamientos_estadisticos, 
+                           aes(x = Stage, 
+                               y = media_cipl_NE, 
+                               colour = Treatment)) +
       geom_point(aes(colour = Treatment), alpha = 1, size = 4) +
       geom_line(aes(group = Treatment)) +
       scale_color_manual(values = c("#ff1493", "#4c00ff")) +
-      geom_errorbar(aes(ymin = media_cipl_NE - se_cipl_NE, ymax = media_cipl_NE + se_cipl_NE), width = .1, size = 1) +
+      geom_errorbar(aes(ymin = media_cipl_NE - se_cipl_NE, 
+                        ymax = media_cipl_NE + se_cipl_NE), width = .1, size = 1) +
       labs(
         title = "CIPL Annulus NE",
         subtitle = "Fluoxetina Grupo 1",
