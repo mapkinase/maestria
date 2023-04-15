@@ -242,12 +242,10 @@ server <- function(input, output, session) {
                    fun.y="mean",
                    size = 1) +
       # Puntos individuales
-      # geom_jitter(shape = 1, 
-      #             position = position_dodge(width = dodge_width),
-      #             alpha = 0.5, 
-      #             aes(colour = Sexo,
-      #                 group = Tratamiento,
-      #                 text = paste ("Número de prueba:", Test))) + # Funciona para que diga qué número de prueba es al seleccionar el dato
+      geom_jitter(shape = 1,
+                  alpha = 0.5,
+                  aes(colour = Tratamiento,
+                      group = Tratamiento)) + # Funciona para que diga qué número de prueba es al seleccionar el dato
       # # geom_boxplot(outlier.shape = 4, 
       #              position = position_dodge(width = dodge_width),
       #              alpha = 0.5) +
