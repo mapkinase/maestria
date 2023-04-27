@@ -2,7 +2,7 @@
 
 /* Style the sidebar panel */
 .sidebar-panel {
-  background-color: #f7f7f7;
+  background-color: #1a0061;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -10,7 +10,7 @@
 
 /* Style the main panel */
 .main-panel {
-  background-color: #ffffff;
+  background-color: #1a0061;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

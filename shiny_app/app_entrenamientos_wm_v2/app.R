@@ -1,14 +1,4 @@
-Now, please help me combine this two ahiny apps: 
-
-# First App: 
-
-
-
-library(shiny)
-library(dplyr)
-library(tidyverse)
-library(fs)
-library(shinythemes)
+I have the following Shiny app, can you replace the whole "entr_lat_plot" with an interactive plot instead of a ggplot?
 
 
 
@@ -30,19 +20,17 @@ ui <- fluidPage(
   #Define the layout
   sidebarLayout(
     sidebarPanel(
-      # File input control
-      fileInput("file", "Upload the data file", buttonLabel = "Browse..."),
-      # Download buttib for processed data
+      # File input control for processing and merging CSV files
+      fileInput("file", "Upload the data file for processing", buttonLabel = "Browse..."),
       downloadButton("download", "Download the modified data"),
-      # Spacing
       br(),
       br(),
-      # Text input for directory path
       textInput("folder", "Enter directory path:"),
-      # Button to load files from directory
       actionButton("loadFiles", "Load Files"),
-      # Download button for merged CSV
-      downloadButton("downloadFile", "Download Merged CSV", enabled = FALSE)
+      downloadButton("downloadFile", "Download Merged CSV", enabled = FALSE),
+      # File input control for data analysis
+      fileInput("analysisFile", "Choose CSV file for analysis", accept = c(".csv")),
+      tags$hr()
     ),
     mainPanel(
       # Heading for processed data table
@@ -52,11 +40,18 @@ ui <- fluidPage(
       # Heading for merged data table
       tags$h3("Merged Data"),
       # display the merged data table
-      tableOutput("mergedTable")
-
+      tableOutput("mergedTable"),
+      tabsetPanel(
+        id = "main_tab",
+        tabPanel("Entrneamientos Latencias",
+                 plotOutput("entr_lat_plot"),
+                 downloadButton("entr_lat_csv", "Download CSV"),
+                 downloadButton("entr_lat_xlsx", "Download XLSX"),
+                 downloadButton("entr_lat_pzfx", "Download PZFX"))
+      )
     )
   )
-))
+)
 
 # Define the server
 server <- function(input, output, session) {
@@ -127,193 +122,53 @@ server <- function(input, output, session) {
   })
   
 
-      
-    })
-    
+  
+  df_analysis <- reactive({
+    req(input$analysisFile)
+    read.csv(input$analysisFile$datapath)
   })
   
-  }
+  entrneamientos_latencias <- reactive({
+    req(df_analysis())
+    df_analysis() %>%
+      group_by(Treatment, Stage) %>%
+      filter(str_detect(Stage, "entrenamiento")) %>%
+      filter(!str_detect(Stage, "pre")) %>%
+      select(Treatment,
+             Stage,
+             Duration,
+             Test,
+             Animal)
+  })
+  
+  output$entr_lat_plot <- renderPlot({
+    req(entrneamientos_latencias())
+    ggplot(entrneamientos_latencias(), aes(x = Stage, y = Duration, fill = Treatment)) +
+      geom_violin(trim = FALSE, position = position_dodge(1)) +
+      geom_boxplot(position = position_dodge(1)) +
+      stat_summary(fun.data = mean_se, geom = "pointrange", position = position_dodge(1), colour = "red") +
+      geom_jitter(shape = 16, position = position_dodge(1), colour = "black", alpha = 0.9) +
+      theme_classic()
+  })
+  
+  # Download buttons for CSV, XLSX, and PZFX files
+  output$entr_lat_csv <- downloadHandler(
+    filename = function() {"entrneamientos_latencias.csv"},
+    content = function(file) {write.csv(entrneamientos_latencias(), file)}
+  )
+  
+output$entr_lat_xlsx <- downloadHandler(
+  filename = function() {"entrneamientos_latencias.xlsx"},
+  content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
+)
+
+output$entr_lat_pzfx <- downloadHandler(
+  filename = function() {"entrneamientos_latencias.pzfx"},
+  content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
+)
+
+}
+
 
 # Run the app
 shinyApp(ui, server)
-
-
-# Second App: 
-
-library(shiny)
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(tidyr)
-library(openxlsx)
-library(pzfx)
-library(stringr)
-
-
-
-ui <- fluidPage(
-  titlePanel("Data Analysis"),
-  sidebarLayout(
-    sidebarPanel(
-      fileInput("file", "Choose CSV file", accept = c(".csv")),
-      tags$hr()
-    ),
-    mainPanel(
-      tabsetPanel(
-        id = "main_tab",
-        tabPanel("Entrneamientos Latencias", 
-                 plotOutput("entr_lat_plot"),
-                 downloadButton("entr_lat_csv", "Download CSV"),
-                 downloadButton("entr_lat_xlsx", "Download XLSX"),
-                 downloadButton("entr_lat_pzfx", "Download PZFX"))
-      )
-    )
-  )
-)
-
-server <- function(input, output, session) {
-  df <- reactive({
-    req(input$file)
-    read.csv(input$file$datapath)
-  })
- 
-    
-    entrneamientos_latencias <- reactive({
-      req(df())
-      df() %>%
-        group_by(Treatment, Stage) %>%
-        filter(str_detect(Stage, "entrenamiento")) %>%
-        filter(!str_detect(Stage, "pre")) %>%
-        select(Treatment,
-               Stage,
-               Duration,
-               Test,
-               Animal)
-    })
-
-    
-    output$entr_lat_plot <- renderPlot({
-      req(entrneamientos_latencias())
-      ggplot(entrneamientos_latencias(), aes(x = Stage, y = Duration, fill = Treatment)) +
-        geom_violin(trim = FALSE, position = position_dodge(1)) +
-        geom_boxplot(position = position_dodge(1) ) +
-        stat_summary(fun.data = mean_se, geom = "pointrange", position = position_dodge(1), colour = "red") + # geom = "errorbar"
-        # geom_dotplot(binaxis='y', stackdir='center', dotsize=1, position = position_dodge(1)) +
-        geom_jitter(shape=16, position=position_dodge(1), colour = "black" , alpha=0.9) +
-        theme_classic()
-
-    })
-    
-
-    
-    # Download buttons for CSV, XLSX, and PZFX files
-    # Replace `entrneamientos_latencias` with the corresponding sub-dataframe name for each tab
-    
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    # Add the corresponding download handlers for each sub-dataframe and tab
-    # Replace the `entr_lat_` prefix with the appropriate prefix for each tab
-
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    ####
-    
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    ####
-    
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    
-    ####
-    
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    ###
-    
-    output$entr_lat_csv <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.csv"},
-      content = function(file) {write.csv(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_xlsx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.xlsx"},
-      content = function(file) {write.xlsx(entrneamientos_latencias(), file)}
-    )
-    
-    output$entr_lat_pzfx <- downloadHandler(
-      filename = function() {"entrneamientos_latencias.pzfx"},
-      content = function(file) {write_pzfx(entrneamientos_latencias(), file)}
-    )
-    
-    ###
-    
-    
-  }
-  
-  shinyApp(ui = ui, server = server)
